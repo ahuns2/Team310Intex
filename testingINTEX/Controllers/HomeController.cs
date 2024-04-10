@@ -23,29 +23,15 @@ namespace testingINTEX.Controllers
 
         public IActionResult Index()
         {
-            // Retrieve all customers from the database
-            var customers = _repo.Customers.ToList();
-
-            return View(customers);
+            return View();
         }
 
         public IActionResult Privacy()
         {
             return View();
         }
-
-        [HttpGet]
-        public IActionResult AdmimSingleProduct()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult AdmimSingleProduct(Product response)
-        {
-            _repo.AdminAddProduct(response); //add record to the database
-            return View("Index");
-        }
-
+        
+        //AVA: Displays the Admin Overview product page (product table)
         public IActionResult AdminProductPage(int pageNum)
         {
             //setting how many products you want per page
@@ -78,6 +64,23 @@ namespace testingINTEX.Controllers
             return View(viewModel);
         }
         
+        //AVA: Displays the Admin single product FORM page
+        [HttpGet]
+        public IActionResult AdmimSingleProduct()
+        {
+            return View();
+        }
+        //AVA: The Post method that actually adds a new product to the database
+        [HttpPost]
+        public IActionResult AdmimSingleProduct(Product response)
+        {
+            _repo.AdminAddProduct(response); //add record to the database
+            return View("Index");
+        }
+        
+        
+        //AVA: Get method to return the AdminSingleProduct Page WITH the data
+        //of the product the admin is wanting to edit
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -85,34 +88,36 @@ namespace testingINTEX.Controllers
                 .Single(x => x.ProductId == id);
             return View("AdmimSingleProduct", recordToEdit);
         }
-        
-        //This one actually edits and updates the database 
+        //AVA: The Post Method that will actually update the database
+        //with the change made to the product
         [HttpPost]
         public IActionResult Edit(Product updatedInfo)
         {
             _repo.AdminUpdateProduct(updatedInfo);
             return RedirectToAction("AdminProductPage");
         }
+        
+        //AVA: Get method to return the AdminSingleProductPage WITH the data
+        //of the product the admin is wanting to delete
         [HttpGet]
-
-        //This one displays the delete page
-        public IActionResult Delete(int id)
+        public IActionResult AdminDeleteProduct(int id)
         {
             var recordToDelete = _repo.Products
                 .Single(x => x.ProductId == id);
 
-            return View("AdminProductPage");
+            return View(recordToDelete);
         }
-
-        //This one does the actual deleting
+        //AVA: The Post Method that will actually delete the product
+        //from the database 
         [HttpPost]
-        public IActionResult Delete(Product deletingInfo)
+        public IActionResult AdminDeleteProduct(Product deletingInfo)
         {
             _repo.AdminDeleteProduct(deletingInfo);
 
             return RedirectToAction("AdminProductPage");
         }
 
+        //CONNOR:
         public IActionResult Products(int page = 1, int pageSize = 10) // Add pageSize parameter
         {
             // Validate the pageSize parameter to ensure it's within a reasonable range

@@ -26,8 +26,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pbVNpbmdsZVByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/AdminDeleteProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pbkRlbGV0ZVByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/AdminProductPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pblByb2R1Y3RQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/AdminUserPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pblVzZXJQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/Index.cshtml]

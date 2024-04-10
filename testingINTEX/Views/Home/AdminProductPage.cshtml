@@ -7,6 +7,9 @@
 @model testingINTEX.Models.ViewModels.ProductsListViewModel
 
 <h1>Product Page</h1>
+<div>
+    <a class="btn btn-info" asp-controller="Home" asp-action="AdmimSingleProduct">Add New Product</a>
+</div>
 <table class="table">
     <thead>
     <tr>
@@ -15,7 +18,7 @@
         <th>Number of Parts</th>
         <th>Price</th>
         <th>Colors</th>
-        <th>Category</th>
+        <th>Categories</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
@@ -31,7 +34,7 @@
             <td>@product.PrimaryColor + @product.SecondaryColor</td>
             <td>@product.Category</td>
             <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@product.ProductId">Edit</a></td>
-            <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@product.ProductId">Delete</a></td>
+            <td><a class="btn btn-danger" asp-controller="Home" asp-action="AdminDeleteProduct" asp-route-id="@product.ProductId">Delete</a></td>
         </tr>
     }
     </tbody>

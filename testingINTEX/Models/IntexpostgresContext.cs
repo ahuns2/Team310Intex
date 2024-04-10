@@ -123,7 +123,10 @@ public partial class IntexpostgresContext : DbContext
 
             entity.ToTable("products");
 
-            entity.Property(e => e.ProductId).HasColumnName("product_id");
+            entity.Property(e => e.ProductId)
+                .UseIdentityAlwaysColumn()
+                .HasIdentityOptions(null, null, 38L, null, null, null)
+                .HasColumnName("product_id");
             entity.Property(e => e.Category)
                 .HasMaxLength(100)
                 .HasColumnName("category");
