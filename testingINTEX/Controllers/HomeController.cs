@@ -29,23 +29,48 @@ namespace testingINTEX.Controllers
             return View();
         }
 
-        public IActionResult Products(int page = 1, int pageSize = 10) // Add pageSize parameter
+        public IActionResult Products(string[] categories, string[] colors, int page = 1, int pageSize = 10)
         {
+            // Retrieve distinct categories from your data source
+            var categoriesList = _context.Products
+                .SelectMany(p => new[] { p.Category1, p.Category2, p.Category3 }.AsEnumerable())
+                .Distinct()
+                .ToList();
+
+            // Retrieve distinct colors from your data source
+            var colorsList = _context.Products
+                .SelectMany(p => new[] { p.PrimaryColor, p.SecondaryColor }.AsEnumerable())
+                .Distinct()
+                .ToList();
+
+            // Populate ViewBag.Categories and ViewBag.Colors with the category and color data
+            ViewBag.Categories = categoriesList;
+            ViewBag.Colors = colorsList;
+
             // Validate the pageSize parameter to ensure it's within a reasonable range
             pageSize = Math.Clamp(pageSize, 5, 20);
 
-            // Calculate the number of items to skip based on the current page
-            int skipAmount = (page - 1) * pageSize;
+            // Retrieve the initial query for all products
+            var query = _context.Products.AsQueryable(); // Start with all products
 
-            // Retrieve a subset of products for the current page using LINQ
-            var products = _context.Products
-                .OrderBy(p => p.ProductId) // You can order by any property you like
-                .Skip(skipAmount)
-                .Take(pageSize)
-                .ToList();
+            // Apply category filters
+            if (categories != null && categories.Length > 0)
+            {
+                query = query.Where(p => categories.Any(c => p.Category1.Contains(c) || p.Category2.Contains(c) || p.Category3.Contains(c)));
+            }
+
+            // Apply color filters
+            if (colors != null && colors.Length > 0)
+            {
+                query = query.Where(p => colors.Any(c => p.PrimaryColor.Contains(c) || p.SecondaryColor.Contains(c)));
+            }
+
+            // Apply pagination
+            int skipAmount = (page - 1) * pageSize;
+            var products = query.OrderBy(p => p.ProductId).Skip(skipAmount).Take(pageSize).ToList();
 
             // Calculate the total number of products (needed for pagination UI)
-            int totalProducts = _context.Products.Count();
+            int totalProducts = query.Count();
 
             // Calculate the total number of pages
             int totalPages = (int)Math.Ceiling((double)totalProducts / pageSize);
@@ -54,6 +79,7 @@ namespace testingINTEX.Controllers
             ViewBag.CurrentPage = page;
             ViewBag.TotalPages = totalPages;
             ViewBag.PageSize = pageSize;
+
             return View(products);
         }
 

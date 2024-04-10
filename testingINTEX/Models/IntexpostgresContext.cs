@@ -105,6 +105,9 @@ public partial class IntexpostgresContext : DbContext
             entity.Property(e => e.Category)
                 .HasMaxLength(100)
                 .HasColumnName("category");
+            entity.Property(e => e.Category1).HasColumnName("category1");
+            entity.Property(e => e.Category2).HasColumnName("category2");
+            entity.Property(e => e.Category3).HasColumnName("category3");
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.ImgLink).HasColumnName("img_link");
             entity.Property(e => e.Name)
@@ -125,23 +128,23 @@ public partial class IntexpostgresContext : DbContext
 
         modelBuilder.Entity<Transaction>(entity =>
         {
-            entity
-                .ToTable("transactions");
-            
-            // Define both transaction_id and product_id as composite primary key
-            entity.HasKey(e => new { e.TransactionId, e.ProductId });
+            entity.HasKey(e => new { e.TransactionId, e.ProductId }).HasName("transactions_pkey");
 
+            entity.ToTable("transactions");
+
+            entity.Property(e => e.TransactionId).HasColumnName("transaction_id");
             entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.Qty).HasColumnName("qty");
             entity.Property(e => e.Rating).HasColumnName("rating");
-            entity.Property(e => e.TransactionId).HasColumnName("transaction_id");
 
-            entity.HasOne(d => d.Product).WithMany()
+            entity.HasOne(d => d.Product).WithMany(p => p.Transactions)
                 .HasForeignKey(d => d.ProductId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("transactions_product_id_fkey");
 
-            entity.HasOne(d => d.TransactionNavigation).WithMany()
+            entity.HasOne(d => d.TransactionNavigation).WithMany(p => p.Transactions)
                 .HasForeignKey(d => d.TransactionId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("transactions_transaction_id_fkey");
         });
 

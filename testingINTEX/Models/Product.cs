@@ -24,4 +24,12 @@ public partial class Product
     public string? Description { get; set; }
 
     public string? Category { get; set; }
+
+    public string? Category1 { get; set; }
+
+    public string? Category2 { get; set; }
+
+    public string? Category3 { get; set; }
+
+    public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
 }

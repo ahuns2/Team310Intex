@@ -7,15 +7,15 @@
 
 @using (Html.BeginForm("Products", "Home", FormMethod.Get, new { id = "paginationForm" }))
 {
-<div class="form-group">
-    <label for="pageSize">Items per page:</label>
-    @Html.DropDownList("pageSize", new List<SelectListItem>
-    {
-    new SelectListItem { Text = "5", Value = "5", Selected = ViewBag.PageSize == 5 },
-    new SelectListItem { Text = "10", Value = "10", Selected = ViewBag.PageSize == 10 },
-    new SelectListItem { Text = "20", Value = "20", Selected = ViewBag.PageSize == 20 }
-    }, new { @class = "form-control" })
-</div>
+    <div class="form-group">
+        <label for="pageSize">Items per page:</label>
+        @Html.DropDownList("pageSize", new List<SelectListItem>
+        {
+            new SelectListItem { Text = "5", Value = "5", Selected = ViewBag.PageSize == 5 },
+            new SelectListItem { Text = "10", Value = "10", Selected = ViewBag.PageSize == 10 },
+            new SelectListItem { Text = "20", Value = "20", Selected = ViewBag.PageSize == 20 }
+        }, new { @class = "form-control" })
+    </div>
 }
 
 <script>
@@ -25,6 +25,33 @@
         document.querySelector("form").submit();
     });
 </script>
+
+@using (Html.BeginForm("Products", "Home", FormMethod.Get, new { id = "filterForm" }))
+{
+    <div class="form-group">
+        <label>Categories:</label><br />
+        @foreach (var category in ViewBag.Categories ?? Enumerable.Empty<string>())
+        {
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="@category" name="categories" value="@category">
+                <label class="form-check-label" for="@category">@category</label>
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label>Colors:</label><br />
+        @foreach (var color in ViewBag.Colors ?? Enumerable.Empty<string>())
+        {
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="@color" name="colors" value="@color">
+                <label class="form-check-label" for="@color">@color</label>
+            </div>
+        }
+    </div>
+
+    <button type="submit" class="btn btn-primary">Apply Filters</button>
+}
 
 <div class="container">
     <div class="row">
