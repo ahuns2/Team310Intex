@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/testingINTEX.csproj": {}
+    "C:\\Users\\BYU Rental\\Source\\Repos\\avareesew\\testingINTEX\\testingINTEX\\testingINTEX.csproj": {}
   },
   "projects": {
-    "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/testingINTEX.csproj": {
+    "C:\\Users\\BYU Rental\\Source\\Repos\\avareesew\\testingINTEX\\testingINTEX\\testingINTEX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/testingINTEX.csproj",
+        "projectUniqueName": "C:\\Users\\BYU Rental\\Source\\Repos\\avareesew\\testingINTEX\\testingINTEX\\testingINTEX.csproj",
         "projectName": "testingINTEX",
-        "projectPath": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/testingINTEX.csproj",
-        "packagesPath": "/Users/avawilliams/.nuget/packages/",
-        "outputPath": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/obj/",
+        "projectPath": "C:\\Users\\BYU Rental\\Source\\Repos\\avareesew\\testingINTEX\\testingINTEX\\testingINTEX.csproj",
+        "packagesPath": "C:\\Users\\BYU Rental\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\BYU Rental\\Source\\Repos\\avareesew\\testingINTEX\\testingINTEX\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/avawilliams/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\BYU Rental\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -90,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
