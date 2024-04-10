@@ -17,11 +17,11 @@ public partial class IntexpostgresContext : DbContext
 
     public virtual DbSet<Customer> Customers { get; set; }
 
+    public virtual DbSet<LineItem> LineItems { get; set; }
+
     public virtual DbSet<Order> Orders { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }
-
-    public virtual DbSet<Transaction> Transactions { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -52,6 +52,28 @@ public partial class IntexpostgresContext : DbContext
             entity.Property(e => e.LastName)
                 .HasMaxLength(100)
                 .HasColumnName("last_name");
+        });
+
+        modelBuilder.Entity<LineItem>(entity =>
+        {
+            entity.HasKey(e => new { e.TransactionId, e.ProductId }).HasName("transactions_pkey");
+
+            entity.ToTable("lineItems");
+
+            entity.Property(e => e.TransactionId).HasColumnName("transaction_id");
+            entity.Property(e => e.ProductId).HasColumnName("product_id");
+            entity.Property(e => e.Qty).HasColumnName("qty");
+            entity.Property(e => e.Rating).HasColumnName("rating");
+
+            entity.HasOne(d => d.Product).WithMany(p => p.LineItems)
+                .HasForeignKey(d => d.ProductId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("transactions_product_id_fkey");
+
+            entity.HasOne(d => d.Transaction).WithMany(p => p.LineItems)
+                .HasForeignKey(d => d.TransactionId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("transactions_transaction_id_fkey");
         });
 
         modelBuilder.Entity<Order>(entity =>
@@ -105,6 +127,9 @@ public partial class IntexpostgresContext : DbContext
             entity.Property(e => e.Category)
                 .HasMaxLength(100)
                 .HasColumnName("category");
+            entity.Property(e => e.Category1).HasColumnName("category1");
+            entity.Property(e => e.Category2).HasColumnName("category2");
+            entity.Property(e => e.Category3).HasColumnName("category3");
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.ImgLink).HasColumnName("img_link");
             entity.Property(e => e.Name)
@@ -121,28 +146,6 @@ public partial class IntexpostgresContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("secondary_color");
             entity.Property(e => e.Year).HasColumnName("year");
-        });
-
-        modelBuilder.Entity<Transaction>(entity =>
-        {
-            entity
-                .ToTable("transactions");
-            
-            // Define both transaction_id and product_id as composite primary key
-            entity.HasKey(e => new { e.TransactionId, e.ProductId });
-
-            entity.Property(e => e.ProductId).HasColumnName("product_id");
-            entity.Property(e => e.Qty).HasColumnName("qty");
-            entity.Property(e => e.Rating).HasColumnName("rating");
-            entity.Property(e => e.TransactionId).HasColumnName("transaction_id");
-
-            entity.HasOne(d => d.Product).WithMany()
-                .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("transactions_product_id_fkey");
-
-            entity.HasOne(d => d.TransactionNavigation).WithMany()
-                .HasForeignKey(d => d.TransactionId)
-                .HasConstraintName("transactions_transaction_id_fkey");
         });
 
         OnModelCreatingPartial(modelBuilder);

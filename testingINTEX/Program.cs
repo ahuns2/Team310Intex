@@ -9,7 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<IntexpostgresContext>(options =>
     options.UseNpgsql(connectionString));
+
+builder.Services.AddScoped<IIntexRepository, EFIntexRepository>();
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
 
 // Replace IdentityUser with your custom user class if you have one.
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)

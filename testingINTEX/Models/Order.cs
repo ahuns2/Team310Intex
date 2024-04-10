@@ -32,4 +32,6 @@ public partial class Order
     public int? Fraud { get; set; }
 
     public virtual Customer? Customer { get; set; }
+
+    public virtual ICollection<LineItem> LineItems { get; set; } = new List<LineItem>();
 }

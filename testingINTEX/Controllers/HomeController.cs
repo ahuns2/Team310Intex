@@ -8,18 +8,23 @@ namespace testingINTEX.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IntexpostgresContext _context;
 
-        public HomeController(ILogger<HomeController> logger, IntexpostgresContext context)
+        private readonly IIntexRepository _repo;
+        //private readonly IntexpostgresContext _context;
+
+        public HomeController(ILogger<HomeController> logger, IIntexRepository temp
+           // IntexpostgresContext context)
+           )
         {
             _logger = logger;
-            _context = context;
+            _repo = temp;
+            //_context = context;
         }
 
         public IActionResult Index()
         {
             // Retrieve all customers from the database
-            var customers = _context.Customers.ToList();
+            var customers = _repo.Customers.ToList();
 
             return View(customers);
         }
@@ -37,8 +42,7 @@ namespace testingINTEX.Controllers
         [HttpPost]
         public IActionResult AdmimSingleProduct(Product response)
         {
-            _context.Products.Add(response); //add record to the database
-            _context.SaveChanges();
+            _repo.AdminAddProduct(response); //add record to the database
             return View("Index");
         }
 
@@ -55,7 +59,7 @@ namespace testingINTEX.Controllers
             var viewModel = new ProductsListViewModel
             {
                 //this grabs all the products
-                Products = _context.Products
+                Products = _repo.Products
                     .OrderBy(x => x.Name)
                     .Skip((pageNum - 1) * pageSize)
                     .Take(pageSize)
@@ -66,7 +70,7 @@ namespace testingINTEX.Controllers
                 {
                     CurrentPage = pageNum,
                     ItemsPerPage = 10,
-                    TotalItems = _context.Products.Count()
+                    TotalItems = _repo.Products.Count()
                 }
             };
 
@@ -77,7 +81,7 @@ namespace testingINTEX.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var recordToEdit = _context.Products
+            var recordToEdit = _repo.Products
                 .Single(x => x.ProductId == id);
             return View("AdmimSingleProduct", recordToEdit);
         }
@@ -86,8 +90,7 @@ namespace testingINTEX.Controllers
         [HttpPost]
         public IActionResult Edit(Product updatedInfo)
         {
-            _context.Update(updatedInfo);
-            _context.SaveChanges();
+            _repo.AdminUpdateProduct(updatedInfo);
             return RedirectToAction("AdminProductPage");
         }
         [HttpGet]
@@ -95,7 +98,7 @@ namespace testingINTEX.Controllers
         //This one displays the delete page
         public IActionResult Delete(int id)
         {
-            var recordToDelete = _context.Products
+            var recordToDelete = _repo.Products
                 .Single(x => x.ProductId == id);
 
             return View("AdminProductPage");
@@ -105,8 +108,7 @@ namespace testingINTEX.Controllers
         [HttpPost]
         public IActionResult Delete(Product deletingInfo)
         {
-            _context.Products.Remove(deletingInfo);
-            _context.SaveChanges();
+            _repo.AdminDeleteProduct(deletingInfo);
 
             return RedirectToAction("AdminProductPage");
         }
@@ -120,14 +122,14 @@ namespace testingINTEX.Controllers
             int skipAmount = (page - 1) * pageSize;
 
             // Retrieve a subset of products for the current page using LINQ
-            var products = _context.Products
+            var products = _repo.Products
                 .OrderBy(p => p.ProductId) // You can order by any property you like
                 .Skip(skipAmount)
                 .Take(pageSize)
                 .ToList();
 
             // Calculate the total number of products (needed for pagination UI)
-            int totalProducts = _context.Products.Count();
+            int totalProducts = _repo.Products.Count();
 
             // Calculate the total number of pages
             int totalPages = (int)Math.Ceiling((double)totalProducts / pageSize);
