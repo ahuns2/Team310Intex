@@ -19,5 +19,7 @@ public partial class Customer
 
     public decimal? Age { get; set; }
 
+    public Guid? AspUserId { get; set; }
+
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }

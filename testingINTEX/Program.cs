@@ -10,6 +10,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<IntexpostgresContext>(options =>
     options.UseNpgsql(connectionString));
 
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(connectionString));
+
 builder.Services.AddScoped<IIntexRepository, EFIntexRepository>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -17,7 +20,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 // Replace IdentityUser with your custom user class if you have one.
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<IntexpostgresContext>(); // Use your custom context here
+    .AddEntityFrameworkStores<ApplicationDbContext>(); // Use your custom context here
 
 builder.Services.AddControllersWithViews();
 

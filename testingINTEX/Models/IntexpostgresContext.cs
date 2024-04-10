@@ -14,8 +14,12 @@ public partial class IntexpostgresContext : DbContext
         : base(options)
     {
     }
+    
+    public virtual DbSet<BestSeller> BestSellers { get; set; }
 
     public virtual DbSet<Customer> Customers { get; set; }
+
+    public virtual DbSet<HighlyRated> HighlyRateds { get; set; }
 
     public virtual DbSet<LineItem> LineItems { get; set; }
 
@@ -29,6 +33,19 @@ public partial class IntexpostgresContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<BestSeller>(entity =>
+        {
+            entity.HasKey(e => e.BestSellersId).HasName("bestsellers_pkey");
+
+            entity.ToTable("best_sellers");
+
+            entity.Property(e => e.BestSellersId)
+                .ValueGeneratedNever()
+                .HasColumnName("best_sellers_id");
+            entity.Property(e => e.ProductId).HasColumnName("product_id");
+            entity.Property(e => e.TotalQtySold).HasColumnName("total_qty_sold");
+        });
+
         modelBuilder.Entity<Customer>(entity =>
         {
             entity.HasKey(e => e.CustomerId).HasName("customers_pkey");
@@ -39,6 +56,7 @@ public partial class IntexpostgresContext : DbContext
             entity.Property(e => e.Age)
                 .HasPrecision(5, 2)
                 .HasColumnName("age");
+            entity.Property(e => e.AspUserId).HasColumnName("AspUserID");
             entity.Property(e => e.BirthDate).HasColumnName("birth_date");
             entity.Property(e => e.CountryOfResidence)
                 .HasMaxLength(100)
@@ -52,6 +70,21 @@ public partial class IntexpostgresContext : DbContext
             entity.Property(e => e.LastName)
                 .HasMaxLength(100)
                 .HasColumnName("last_name");
+        });
+
+        modelBuilder.Entity<HighlyRated>(entity =>
+        {
+            entity.HasKey(e => e.HighlyRatedId).HasName("highly_rated_pkey");
+
+            entity.ToTable("highly_rated");
+
+            entity.Property(e => e.HighlyRatedId)
+                .ValueGeneratedNever()
+                .HasColumnName("highly_rated_id");
+            entity.Property(e => e.AverageRatings)
+                .HasPrecision(5, 2)
+                .HasColumnName("average_ratings");
+            entity.Property(e => e.ProductId).HasColumnName("product_id");
         });
 
         modelBuilder.Entity<LineItem>(entity =>
@@ -145,6 +178,11 @@ public partial class IntexpostgresContext : DbContext
             entity.Property(e => e.PrimaryColor)
                 .HasMaxLength(50)
                 .HasColumnName("primary_color");
+            entity.Property(e => e.Recommendation1).HasColumnName("recommendation1");
+            entity.Property(e => e.Recommendation2).HasColumnName("recommendation2");
+            entity.Property(e => e.Recommendation3).HasColumnName("recommendation3");
+            entity.Property(e => e.Recommendation4).HasColumnName("recommendation4");
+            entity.Property(e => e.Recommendation5).HasColumnName("recommendation5");
             entity.Property(e => e.SecondaryColor)
                 .HasMaxLength(50)
                 .HasColumnName("secondary_color");
