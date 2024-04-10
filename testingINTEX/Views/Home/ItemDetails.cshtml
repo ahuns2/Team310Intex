@@ -1,0 +1,64 @@
+@model Product
+
+@{
+ViewData["Title"] = "View Item";
+}
+
+<div class="container">
+    <h1>Item Details</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Image on the left -->
+            <img src="@Model.ImgLink" alt="@Model.Name" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+            <!-- Details on the right -->
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">@Model.Name</h4>
+                    <p class="card-text">Price: $@Model.Price</p>
+                    <p class="card-text">Number of Parts: @Model.NumParts</p>
+                    <p class="card-text">Description: @Model.Description</p>
+                    <!-- Display average rating -->
+                    @if (ViewBag.AverageRating != null)
+                    {
+                    <p class="card-text">Average Rating: @ViewBag.AverageRating</p>
+                    }
+                    else
+                    {
+                    <p class="card-text">No rating available</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Add to Cart button -->
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Quantity input box -->
+                            <div class="input-group">
+                                <span class="input-group-text">Quantity</span>
+                                <input type="number" class="form-control" id="quantityInput" value="1" min="1">
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="button">Change</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

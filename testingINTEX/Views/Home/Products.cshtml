@@ -58,13 +58,15 @@
         @foreach (var product in Model)
         {
             <div class="col-lg-4 col-md-4 col-sm-6 col-12">
-                <div class="card">
-                    <img class="card-img-top" src="@product.ImgLink" alt="@product.Name">
-                    <div class="card-body">
-                        <h5 class="card-title">@product.Name</h5>
-                        <p class="card-text">$@product.Price</p>
+                <a asp-controller="Home" asp-action="ItemDetails" asp-route-id="@product.ProductId" class="card-link">
+                    <div class="card">
+                        <img class="card-img-top" src="@product.ImgLink" alt="@product.Name">
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text">$@product.Price</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         }
     </div>

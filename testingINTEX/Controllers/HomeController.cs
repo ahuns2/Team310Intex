@@ -82,16 +82,35 @@ namespace testingINTEX.Controllers
 
             return View(products);
         }
-
-        
-        
-        
-        
         
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        public IActionResult ItemDetails(int id)
+        {
+            // Retrieve the product details from your data source based on the id
+            var product = _context.Products.FirstOrDefault(p => p.ProductId == id);
+
+            // Retrieve transactions associated with the product that have ratings
+            var transactionsWithRatings = _context.Transactions
+                .Where(t => t.ProductId == id && t.Rating != null)
+                .ToList();
+
+            // Calculate the average rating
+            double? averageRating = null;
+            if (transactionsWithRatings.Any())
+            {
+                averageRating = transactionsWithRatings.Average(t => t.Rating);
+            }
+
+            // Pass the product and its average rating to the view
+            ViewBag.AverageRating = averageRating;
+            return View(product);
+        }
+        
     }
 }
