@@ -16,29 +16,44 @@ ViewData["Title"] = "View Item";
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">@Model.Name</h4>
+                    <div class="star-rating">
+                        @if (ViewBag.AverageRating != null)
+                        {
+                        <!-- Display rounded rating value to the left -->
+                        <span>@string.Format("{0:F1}", ViewBag.AverageRating)</span>
+                        <!-- Calculate the number of full stars -->
+                        @for (int i = 0; i < Math.Round(ViewBag.AverageRating); i++)
+                        {
+                        <i class="fa fa-star"></i>
+                        }
+                        <!-- Calculate the number of empty stars -->
+                        @for (int i = (int)Math.Round(ViewBag.AverageRating); i < 5; i++)
+                        {
+                        <i class="far fa-star"></i>
+                        }
+                        }
+                        else
+                        {
+                        <!-- If no rating available, display 5 empty stars -->
+                        @for (int i = 0; i < 5; i++)
+                        {
+                        <i class="far fa-star"></i>
+                        }
+                        <p class="card-text">No rating available</p>
+                        }
+                    </div>
                     <p class="card-text">Price: $@Model.Price</p>
                     <p class="card-text">Number of Parts: @Model.NumParts</p>
                     <p class="card-text">Description: @Model.Description</p>
-                    <!-- Display average rating -->
-                    @if (ViewBag.AverageRating != null)
-                    {
-                    <p class="card-text">Average Rating: @ViewBag.AverageRating</p>
-                    }
-                    else
-                    {
-                    <p class="card-text">No rating available</p>
-                    }
                 </div>
             </div>
         </div>
     </div>
 
-
     <div class="row mt-4">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    
                     <div class="row">
                         <div class="col-md-6">
                             <!-- Add to Cart button -->

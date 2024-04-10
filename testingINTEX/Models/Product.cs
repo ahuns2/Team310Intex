@@ -31,5 +31,15 @@ public partial class Product
 
     public string? Category3 { get; set; }
 
-    public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+    public int? Recommendation1 { get; set; }
+
+    public int? Recommendation2 { get; set; }
+
+    public int? Recommendation3 { get; set; }
+
+    public int? Recommendation4 { get; set; }
+
+    public int? Recommendation5 { get; set; }
+
+    public virtual ICollection<LineItem> LineItems { get; set; } = new List<LineItem>();
 }

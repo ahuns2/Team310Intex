@@ -33,5 +33,5 @@ public partial class Order
 
     public virtual Customer? Customer { get; set; }
 
-    public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+    public virtual ICollection<LineItem> LineItems { get; set; } = new List<LineItem>();
 }

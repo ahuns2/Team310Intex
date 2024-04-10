@@ -96,7 +96,7 @@ namespace testingINTEX.Controllers
             var product = _context.Products.FirstOrDefault(p => p.ProductId == id);
 
             // Retrieve transactions associated with the product that have ratings
-            var transactionsWithRatings = _context.Transactions
+            var transactionsWithRatings = _context.LineItems
                 .Where(t => t.ProductId == id && t.Rating != null)
                 .ToList();
 
