@@ -1,0 +1,45 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Product Page";
+}
+
+@model testingINTEX.Models.ViewModels.ProductsListViewModel
+
+<h1>Product Page</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Number of Parts</th>
+        <th>Price</th>
+        <th>Colors</th>
+        <th>Category</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var product in Model.Products)
+    {
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.Year</td>
+            <td>@product.NumParts</td>
+            <td>@product.Price</td>
+            <td>@product.PrimaryColor + @product.SecondaryColor</td>
+            <td>@product.Category</td>
+            <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@product.ProductId">Edit</a></td>
+            <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@product.ProductId">Delete</a></td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<div page-model="@Model.PaginationInfo" 
+     page-action="AdminProductPage" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary" class="btn-group pull-right m-1"></div>
+
+

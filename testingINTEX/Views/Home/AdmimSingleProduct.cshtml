@@ -1,0 +1,37 @@
+﻿@model Product
+
+<h1>Enter a Movie</h1>
+
+<!--the form to submit a movie-->
+<form method="post">
+    <input type="hidden" asp-for="ProductId" />
+    <label asp-for="Name">Product Name: </label>
+    <input asp-for="Name" required />
+    <br />
+    <br />
+    <label asp-for="Year">Year: </label>
+    <input asp-for="Year" required />
+    <br />
+    <br />
+    <label asp-for="NumParts">Number of Parts: </label>
+    <input asp-for="NumParts" required />
+    <br />
+    <br />
+    <label asp-for="Price">Price: </label>
+    <input asp-for="Price" required />
+    <br />
+    <br />
+    <label asp-for="PrimaryColor">Primary Color: </label>
+    <input asp-for="PrimaryColor" required />
+    <br />
+    <br />
+    <label asp-for="SecondaryColor">Secondary Color: </label>
+    <input asp-for="SecondaryColor"/>
+    <br />
+    <br />
+    <label asp-for="Category">Category: </label>
+    <input asp-for="Category"/>
+    <br />
+    <br />
+    <button type="submit">Submit Movie</button>
+</form>

@@ -138,3 +138,4 @@
 /Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/obj/Debug/net8.0/testingINTEX.pdb
 /Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/obj/Debug/net8.0/testingINTEX.genruntimeconfig.cache
 /Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/obj/Debug/net8.0/ref/testingINTEX.dll
+/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/obj/Debug/net8.0/testingINTEX.sourcelink.json

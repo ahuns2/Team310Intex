@@ -39,9 +39,8 @@ app.UseRouting();
 app.UseAuthentication(); // Add authentication middleware
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute("pagination", "Projects/{PageNum}", new {Controller = "Home", action = "Index"});
+app.MapDefaultControllerRoute();
 app.MapRazorPages();
 
 app.Run();
