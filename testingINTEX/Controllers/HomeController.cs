@@ -323,6 +323,11 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
             // Retrieve the product details from your data source based on the id
             var product = _repo.Products.FirstOrDefault(p => p.ProductId == id);
 
+            if (product == null)
+            {
+                return NotFound(); // Product not found
+            }
+
             // Retrieve transactions associated with the product that have ratings
             var transactionsWithRatings = _repo.LineItems
                 .Where(t => t.ProductId == id && t.Rating != null)
@@ -335,8 +340,27 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
                 averageRating = transactionsWithRatings.Average(t => t.Rating);
             }
 
-            // Pass the product and its average rating to the view
+            // Retrieve recommended product IDs from the current product's recommendation columns
+            var recommendedProductIds = new List<int?>
+            {
+                product.Recommendation1,
+                product.Recommendation2,
+                product.Recommendation3,
+                product.Recommendation4,
+                product.Recommendation5
+            };
+
+            // Filter out null or zero recommendation IDs
+            recommendedProductIds = recommendedProductIds.Where(id => id != null && id != 0).ToList();
+
+            // Retrieve recommended products based on the recommendation IDs
+            var recommendedProducts = _repo.Products
+                .Where(p => recommendedProductIds.Contains(p.ProductId))
+                .ToList();
+
+            // Pass the product, its average rating, and recommended products to the view
             ViewBag.AverageRating = averageRating;
+            ViewBag.RecommendedProducts = recommendedProducts;
             return View(product);
         }
         
