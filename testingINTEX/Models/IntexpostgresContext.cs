@@ -31,6 +31,8 @@ public partial class IntexpostgresContext : DbContext
 
     public virtual DbSet<Customer> Customers { get; set; }
 
+    public virtual DbSet<CustomerRecommendation> CustomerRecommendations { get; set; }
+
     public virtual DbSet<HighlyRated> HighlyRateds { get; set; }
 
     public virtual DbSet<LineItem> LineItems { get; set; }
@@ -126,6 +128,7 @@ public partial class IntexpostgresContext : DbContext
             entity.Property(e => e.Age)
                 .HasPrecision(5, 2)
                 .HasColumnName("age");
+            entity.Property(e => e.AspUserId).HasColumnName("AspUserID");
             entity.Property(e => e.BirthDate).HasColumnName("birth_date");
             entity.Property(e => e.CountryOfResidence)
                 .HasMaxLength(100)
@@ -139,6 +142,27 @@ public partial class IntexpostgresContext : DbContext
             entity.Property(e => e.LastName)
                 .HasMaxLength(100)
                 .HasColumnName("last_name");
+            entity.Property(e => e.Recommendation1).HasColumnName("recommendation1");
+            entity.Property(e => e.Recommendation2).HasColumnName("recommendation2");
+            entity.Property(e => e.Recommendation3).HasColumnName("recommendation3");
+            entity.Property(e => e.Recommendation4).HasColumnName("recommendation4");
+            entity.Property(e => e.Recommendation5).HasColumnName("recommendation5");
+        });
+
+        modelBuilder.Entity<CustomerRecommendation>(entity =>
+        {
+            entity.HasKey(e => e.CustomerId).HasName("customer_recommendations_pkey");
+
+            entity.ToTable("customer_recommendations");
+
+            entity.Property(e => e.CustomerId)
+                .ValueGeneratedNever()
+                .HasColumnName("customer_id");
+            entity.Property(e => e.Recommendation1).HasColumnName("recommendation1");
+            entity.Property(e => e.Recommendation2).HasColumnName("recommendation2");
+            entity.Property(e => e.Recommendation3).HasColumnName("recommendation3");
+            entity.Property(e => e.Recommendation4).HasColumnName("recommendation4");
+            entity.Property(e => e.Recommendation5).HasColumnName("recommendation5");
         });
 
         modelBuilder.Entity<HighlyRated>(entity =>
@@ -185,7 +209,8 @@ public partial class IntexpostgresContext : DbContext
             entity.ToTable("orders");
 
             entity.Property(e => e.TransactionId)
-                .ValueGeneratedNever()
+                .UseIdentityAlwaysColumn()
+                .HasIdentityOptions(null, null, 753992L, null, null, null)
                 .HasColumnName("transaction_id");
             entity.Property(e => e.Amount).HasColumnName("amount");
             entity.Property(e => e.Bank)

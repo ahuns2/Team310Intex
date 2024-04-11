@@ -46,5 +46,46 @@ namespace testingINTEX.Controllers
 
             return RedirectToAction("Products", "Home"); // Redirect to the home page or cart page
         }
+
+        [HttpPost]
+        public IActionResult Payment(Order order)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    // Assign date
+                    order.Date = DateOnly.FromDateTime(DateTime.Now);
+
+                    // Assign day of week
+                    order.DayOfWeek = DateTime.Now.DayOfWeek.ToString();
+
+                    // Assign time
+                    order.Time = DateTime.Now.Hour;
+
+                    // Assign entry mode
+                    order.EntryMode = "CVC";
+
+                    // Assign type of transaction
+                    order.TypeOfTransaction = "Online";
+
+                    // Save the order to the database
+                    _context.Orders.Add(order);
+                    _context.SaveChanges();
+
+                    // Redirect to the confirmation view
+                    return RedirectToAction("Confirmation", "Home");
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception, log error, etc.
+                    ModelState.AddModelError("", "An error occurred while processing the payment.");
+                }
+            }
+
+            // If ModelState is not valid, return to the payment view with errors
+            return View("~/Views/Home/Payment.cshtml", order);
+
+        }
     }
 }

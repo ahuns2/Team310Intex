@@ -3,6 +3,8 @@
 @{
     // Calculate total cost
     decimal totalCost = Model.Sum(item => (item.Product.Price ?? 0) * item.Quantity); // Handle null values
+    int totalCostInt = (int)Math.Round(totalCost);
+
 }
 
 <!DOCTYPE html>
@@ -34,17 +36,20 @@
                 </div>
             }
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body text-center">
-                    <h3 class="card-title">Summary</h3>
-                    <!-- Display total cost -->
-                    <p class="card-text">Total Cost: $@totalCost</p>
-                    <!-- Add checkout button -->
-                    <button type="button" class="btn btn-primary">Checkout</button>
+        <form method="post" action="@Url.Action("SendToPayment", "Home")">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Summary</h3>
+                        <!-- Display total cost -->
+                        <p class="card-text">Total Cost: $@totalCost</p>
+                        <input type="hidden" name="Amount" value="@totalCostInt" />
+                        <!-- Add checkout button -->
+                        <button type="submit" class="btn btn-primary">Checkout</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 </body>

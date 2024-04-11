@@ -15,7 +15,7 @@ public partial class AspNetUser
 
     public string? NormalizedEmail { get; set; }
 
-    public int EmailConfirmed { get; set; }
+    public bool EmailConfirmed { get; set; }
 
     public string? PasswordHash { get; set; }
 
@@ -25,13 +25,13 @@ public partial class AspNetUser
 
     public string? PhoneNumber { get; set; }
 
-    public int PhoneNumberConfirmed { get; set; }
+    public bool PhoneNumberConfirmed { get; set; }
 
-    public int TwoFactorEnabled { get; set; }
+    public bool TwoFactorEnabled { get; set; }
 
     public string? LockoutEnd { get; set; }
 
-    public int LockoutEnabled { get; set; }
+    public bool LockoutEnabled { get; set; }
 
     public int AccessFailedCount { get; set; }
 
