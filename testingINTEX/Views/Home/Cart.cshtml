@@ -1,0 +1,56 @@
+@model List<CartItem>
+
+@{
+    // Calculate total cost
+    decimal totalCost = Model.Sum(item => (item.Product.Price ?? 0) * item.Quantity); // Handle null values
+    int totalCostInt = (int)Math.Round(totalCost);
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Shopping Cart</h1>
+            @foreach (var item in Model)
+            {
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="@item.Product.ImgLink" class="card-img" alt="@item.Product.Name">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Product.Name</h5>
+                                <p class="card-text">Price: $@(item.Product.Price ?? 0)</p> <!-- Handle null values -->
+                                <p class="card-text">Quantity: @item.Quantity</p>
+                                <p class="card-text">Subtotal: $@((item.Product.Price ?? 0) * item.Quantity)</p> <!-- Handle null values -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <form method="post" action="@Url.Action("SendToPayment", "Home")">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Summary</h3>
+                        <!-- Display total cost -->
+                        <p class="card-text">Total Cost: $@totalCost</p>
+                        <input type="hidden" name="Amount" value="@totalCostInt" />
+                        <!-- Add checkout button -->
+                        <button type="submit" class="btn btn-primary">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

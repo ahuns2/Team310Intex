@@ -1,0 +1,78 @@
+@{
+ViewData["Title"] = "View Item";
+}
+
+<div class="container">
+    <h1>Item Details</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Image on the left -->
+            <img src="@Model.ImgLink" alt="@Model.Name" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+            <!-- Details on the right -->
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">@Model.Name</h4>
+                    <div class="star-rating">
+                        @if (ViewBag.AverageRating != null)
+                        {
+                        <!-- Display rounded rating value to the left -->
+                        <span>@string.Format("{0:F1}", ViewBag.AverageRating)</span>
+                        <!-- Calculate the number of full stars -->
+                        @for (int i = 0; i < Math.Round(ViewBag.AverageRating); i++)
+                        {
+                        <i class="fa fa-star"></i>
+                        }
+                        <!-- Calculate the number of empty stars -->
+                        @for (int i = (int)Math.Round(ViewBag.AverageRating); i < 5; i++)
+                        {
+                        <i class="far fa-star"></i>
+                        }
+                        }
+                        else
+                        {
+                        <!-- If no rating available, display 5 empty stars -->
+                        @for (int i = 0; i < 5; i++)
+                        {
+                        <i class="far fa-star"></i>
+                        }
+                        <p class="card-text">No rating available</p>
+                        }
+                    </div>
+                    <p class="card-text">Price: $@Model.Price</p>
+                    <p class="card-text">Number of Parts: @Model.NumParts</p>
+                    <p class="card-text">Description: @Model.Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <!-- Form for adding to cart -->
+                    <form asp-controller="Home" asp-action="AddToCart" method="post">
+                        <input type="hidden" name="productId" value="@Model.ProductId" />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- Add to Cart button -->
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Quantity input box -->
+                                <div class="input-group">
+                                    <span class="input-group-text">Quantity</span>
+                                    <input type="number" class="form-control" name="quantity" value="1" min="1">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -38,6 +38,12 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddControllersWithViews();
 
+// Add session configuration
+builder.Services.AddSession(options =>
+{
+    options.Cookie.IsEssential = true; // make the session cookie essential
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -59,6 +65,8 @@ app.UseRouting();
 
 app.UseAuthentication(); // Add authentication middleware
 app.UseAuthorization();
+
+app.UseSession(); // Add session middleware
 
 app.MapControllerRoute("pagination", "Projects/{PageNum}", new {Controller = "Home", action = "LoggedInLandingPage"});
 app.MapDefaultControllerRoute();

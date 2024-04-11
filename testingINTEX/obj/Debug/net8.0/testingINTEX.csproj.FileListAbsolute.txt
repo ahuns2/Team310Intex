@@ -143,3 +143,4 @@
 /Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/bin/Debug/net8.0/Microsoft.AspNetCore.Metadata.dll
 /Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/bin/Debug/net8.0/Newtonsoft.Json.dll

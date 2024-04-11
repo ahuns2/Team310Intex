@@ -60,9 +60,9 @@ namespace testingINTEX.Models
             _context.SaveChanges();  
         }
 
-        //public void SaveChanges()
-        //{
-        //    _context.SaveChanges();
-        //}
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
+        }
     }
 }

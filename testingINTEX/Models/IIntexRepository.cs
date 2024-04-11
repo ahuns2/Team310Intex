@@ -25,5 +25,6 @@ namespace testingINTEX.Models
 
         public void AdminDeleteOrder(Order order);
 
+        public void SaveChanges();
     }
 }
