@@ -279,3 +279,4 @@
 /Users/connorhumphrey/RiderProjects/testingINTEX/testingINTEX/obj/Debug/net8.0/testingINTEX.pdb
 /Users/connorhumphrey/RiderProjects/testingINTEX/testingINTEX/obj/Debug/net8.0/testingINTEX.genruntimeconfig.cache
 /Users/connorhumphrey/RiderProjects/testingINTEX/testingINTEX/obj/Debug/net8.0/ref/testingINTEX.dll
+/Users/connorhumphrey/RiderProjects/testingINTEX/testingINTEX/bin/Debug/net8.0/Newtonsoft.Json.dll

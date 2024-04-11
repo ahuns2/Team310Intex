@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using testingINTEX.Data;
 using testingINTEX.Models;
+using Microsoft.Extensions.DependencyInjection;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,12 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<IntexpostgresContext>(); // Use your custom context here
 
 builder.Services.AddControllersWithViews();
+
+// Add session configuration
+builder.Services.AddSession(options =>
+{
+    options.Cookie.IsEssential = true; // make the session cookie essential
+});
 
 var app = builder.Build();
 
@@ -38,6 +46,8 @@ app.UseRouting();
 
 app.UseAuthentication(); // Add authentication middleware
 app.UseAuthorization();
+
+app.UseSession(); // Add session middleware
 
 app.MapControllerRoute(
     name: "default",

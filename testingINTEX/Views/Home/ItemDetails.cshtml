@@ -1,5 +1,3 @@
-@model Product
-
 @{
 ViewData["Title"] = "View Item";
 }
@@ -54,22 +52,23 @@ ViewData["Title"] = "View Item";
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <!-- Add to Cart button -->
-                            <button type="button" class="btn btn-primary">Add to Cart</button>
-                        </div>
-                        <div class="col-md-6">
-                            <!-- Quantity input box -->
-                            <div class="input-group">
-                                <span class="input-group-text">Quantity</span>
-                                <input type="number" class="form-control" id="quantityInput" value="1" min="1">
-                                <div class="input-group-append">
-                                    <button class="btn btn-secondary" type="button">Change</button>
+                    <!-- Form for adding to cart -->
+                    <form asp-controller="Cart" asp-action="AddToCart" method="post">
+                        <input type="hidden" name="productId" value="@Model.ProductId" />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- Add to Cart button -->
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Quantity input box -->
+                                <div class="input-group">
+                                    <span class="input-group-text">Quantity</span>
+                                    <input type="number" class="form-control" name="quantity" value="1" min="1">
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

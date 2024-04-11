@@ -112,5 +112,14 @@ namespace testingINTEX.Controllers
             return View(product);
         }
         
+        public IActionResult Cart()
+        {
+            // Retrieve the cart data from the session
+            var cart = HttpContext.Session.GetObject<List<CartItem>>("Cart") ?? new List<CartItem>();
+
+            // Pass the cart data to the view
+            return View(cart);
+        }
+        
     }
 }

@@ -1,0 +1,35 @@
+@model List<CartItem>  
+<!--Assuming your model is a List<CartItem> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+<div>
+    <h1>Shopping Cart</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Product.Name</td>
+                <td>$@item.Product.Price</td>
+                <td>@item.Quantity</td>
+                <td>$@(item.Product.Price * item.Quantity)</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
