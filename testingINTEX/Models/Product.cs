@@ -30,6 +30,7 @@ public partial class Product
     public string? Category2 { get; set; }
 
     public string? Category3 { get; set; }
+
     public int? Recommendation1 { get; set; }
 
     public int? Recommendation2 { get; set; }

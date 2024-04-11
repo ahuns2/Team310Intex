@@ -1,4 +1,6 @@
-﻿namespace testingINTEX.Models
+﻿using testingINTEX.Models;
+
+namespace testingINTEX.Models
 {
     public interface IIntexRepository
     {
@@ -16,6 +18,12 @@
         public void AdminUpdateProduct(Product product);
 
         public void AdminDeleteProduct(Product product);
+        
+        public void AdminAddOrder(Order order);
+
+        public void AdminUpdateOrder(Order order);
+
+        public void AdminDeleteOrder(Order order);
 
     }
 }

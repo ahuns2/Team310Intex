@@ -33,7 +33,7 @@
             <td>@product.Price</td>
             <td>@product.PrimaryColor + @product.SecondaryColor</td>
             <td>@product.Category</td>
-            <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@product.ProductId">Edit</a></td>
+            <td><a class="btn btn-info" asp-controller="Home" asp-action="AdminEditProduct" asp-route-id="@product.ProductId">Edit</a></td>
             <td><a class="btn btn-danger" asp-controller="Home" asp-action="AdminDeleteProduct" asp-route-id="@product.ProductId">Delete</a></td>
         </tr>
     }

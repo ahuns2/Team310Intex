@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using testingINTEX.Models;
 
 namespace testingINTEX.Models
 {
@@ -38,6 +39,25 @@ namespace testingINTEX.Models
         {
             _context.Update(product);
             _context.SaveChanges();
+        }
+
+        public void AdminAddOrder(Order order)
+        {
+            _context.Orders.Add(order);
+            _context.SaveChanges();
+        }
+        
+
+        public void AdminUpdateOrder(Order order)
+        {
+            _context.Update(order);
+            _context.SaveChanges();   
+        }
+
+        public void AdminDeleteOrder(Order order)
+        {
+            _context.Orders.Remove(order);
+            _context.SaveChanges();  
         }
 
         //public void SaveChanges()

@@ -14,10 +14,24 @@ public partial class IntexpostgresContext : DbContext
         : base(options)
     {
     }
-    
+
+    public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+
+    public virtual DbSet<AspNetRoleClaim> AspNetRoleClaims { get; set; }
+
+    public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+
+    public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+
+    public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+
+    public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; }
+
     public virtual DbSet<BestSeller> BestSellers { get; set; }
 
     public virtual DbSet<Customer> Customers { get; set; }
+
+    public virtual DbSet<CustomerRecommendation> CustomerRecommendations { get; set; }
 
     public virtual DbSet<HighlyRated> HighlyRateds { get; set; }
 
@@ -33,6 +47,64 @@ public partial class IntexpostgresContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<AspNetRole>(entity =>
+        {
+            entity.HasIndex(e => e.NormalizedName, "RoleNameIndex").IsUnique();
+        });
+
+        modelBuilder.Entity<AspNetRoleClaim>(entity =>
+        {
+            entity.HasIndex(e => e.RoleId, "IX_AspNetRoleClaims_RoleId");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+
+            entity.HasOne(d => d.Role).WithMany(p => p.AspNetRoleClaims).HasForeignKey(d => d.RoleId);
+        });
+
+        modelBuilder.Entity<AspNetUser>(entity =>
+        {
+            entity.HasIndex(e => e.NormalizedEmail, "EmailIndex");
+
+            entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex").IsUnique();
+
+            entity.HasMany(d => d.Roles).WithMany(p => p.Users)
+                .UsingEntity<Dictionary<string, object>>(
+                    "AspNetUserRole",
+                    r => r.HasOne<AspNetRole>().WithMany().HasForeignKey("RoleId"),
+                    l => l.HasOne<AspNetUser>().WithMany().HasForeignKey("UserId"),
+                    j =>
+                    {
+                        j.HasKey("UserId", "RoleId");
+                        j.ToTable("AspNetUserRoles");
+                        j.HasIndex(new[] { "RoleId" }, "IX_AspNetUserRoles_RoleId");
+                    });
+        });
+
+        modelBuilder.Entity<AspNetUserClaim>(entity =>
+        {
+            entity.HasIndex(e => e.UserId, "IX_AspNetUserClaims_UserId");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+
+            entity.HasOne(d => d.User).WithMany(p => p.AspNetUserClaims).HasForeignKey(d => d.UserId);
+        });
+
+        modelBuilder.Entity<AspNetUserLogin>(entity =>
+        {
+            entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
+
+            entity.HasIndex(e => e.UserId, "IX_AspNetUserLogins_UserId");
+
+            entity.HasOne(d => d.User).WithMany(p => p.AspNetUserLogins).HasForeignKey(d => d.UserId);
+        });
+
+        modelBuilder.Entity<AspNetUserToken>(entity =>
+        {
+            entity.HasKey(e => new { e.UserId, e.LoginProvider, e.Name });
+
+            entity.HasOne(d => d.User).WithMany(p => p.AspNetUserTokens).HasForeignKey(d => d.UserId);
+        });
+
         modelBuilder.Entity<BestSeller>(entity =>
         {
             entity.HasKey(e => e.BestSellersId).HasName("bestsellers_pkey");
@@ -70,6 +142,27 @@ public partial class IntexpostgresContext : DbContext
             entity.Property(e => e.LastName)
                 .HasMaxLength(100)
                 .HasColumnName("last_name");
+            entity.Property(e => e.Recommendation1).HasColumnName("recommendation1");
+            entity.Property(e => e.Recommendation2).HasColumnName("recommendation2");
+            entity.Property(e => e.Recommendation3).HasColumnName("recommendation3");
+            entity.Property(e => e.Recommendation4).HasColumnName("recommendation4");
+            entity.Property(e => e.Recommendation5).HasColumnName("recommendation5");
+        });
+
+        modelBuilder.Entity<CustomerRecommendation>(entity =>
+        {
+            entity.HasKey(e => e.CustomerId).HasName("customer_recommendations_pkey");
+
+            entity.ToTable("customer_recommendations");
+
+            entity.Property(e => e.CustomerId)
+                .ValueGeneratedNever()
+                .HasColumnName("customer_id");
+            entity.Property(e => e.Recommendation1).HasColumnName("recommendation1");
+            entity.Property(e => e.Recommendation2).HasColumnName("recommendation2");
+            entity.Property(e => e.Recommendation3).HasColumnName("recommendation3");
+            entity.Property(e => e.Recommendation4).HasColumnName("recommendation4");
+            entity.Property(e => e.Recommendation5).HasColumnName("recommendation5");
         });
 
         modelBuilder.Entity<HighlyRated>(entity =>
@@ -116,7 +209,8 @@ public partial class IntexpostgresContext : DbContext
             entity.ToTable("orders");
 
             entity.Property(e => e.TransactionId)
-                .ValueGeneratedNever()
+                .UseIdentityAlwaysColumn()
+                .HasIdentityOptions(null, null, 753992L, null, null, null)
                 .HasColumnName("transaction_id");
             entity.Property(e => e.Amount).HasColumnName("amount");
             entity.Property(e => e.Bank)

@@ -1,0 +1,39 @@
+﻿@using testingINTEX.Models
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<AppUser>
+@{
+    ViewData["Title"] = "Admin User Page";
+}
+<h1>Admin User Page</h1>
+@* <h1 class="bg-info text-white">All Users</h1> *@
+@* *@
+@* <table class="table table-sm table-bordered"> *@
+@* 	<tr> *@
+@* 		<th>ID</th> *@
+@* 		<th>Name</th> *@
+@* 		<th>Email</th> *@
+@* 		<th>Update</th> *@
+@* 		<th>Delete</th> *@
+@* 	</tr> *@
+@* 	@foreach (var user in Model) *@
+@* 	{ *@
+@* 		<tr> *@
+@* 			<td>@user.Id</td> *@
+@* 			<td>@user.UserName</td> *@
+@* 			<td>@user.Email</td> *@
+@* 			<td> *@
+@* 				$1$ <a class="btn btn-sm btn-primary" asp-action="Update" asp-route-id="@user.Id"> #1# *@
+@* 				$1$ 	Update #1# *@
+@* 				$1$ </a> #1# *@
+@* 			</td> *@
+@* 			<td> *@
+@*                 $1$ <form asp-action="Delete" asp-route-id="@user.Id" method="post"> #1# *@
+@*                 $1$     <button type="submit" class="btn btn-sm btn-danger"> #1# *@
+@*                 $1$         Delete #1# *@
+@*                 $1$     </button> #1# *@
+@*                 $1$ </form> #1# *@
+@*             </td> *@
+@* 		</tr> *@
+@* 	} *@
+@* </table> *@
+

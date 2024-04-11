@@ -1,0 +1,15 @@
+﻿.lego-lady {
+    font-size: 48px;
+    color: #ffdf00 !important;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.nav-link {
+    color: red !important;
+}
+
+/* Body padding to compensate for footer */
+body {
+    padding-bottom: 70px; /* Adjust according to your footer height */
+}

@@ -5,12 +5,112 @@
       "PackagePath": "staticwebassets/testingINTEX.bundle.scp.css"
     },
     {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/About.css",
+      "PackagePath": "staticwebassets/css/About.css"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/CompletedSignUp.css",
+      "PackagePath": "staticwebassets/css/CompletedSignUp.css"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/FraudWarning.css",
+      "PackagePath": "staticwebassets/css/FraudWarning.css"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/LandingPage.css",
+      "PackagePath": "staticwebassets/css/LandingPage.css"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/Layout.css",
+      "PackagePath": "staticwebassets/css/Layout.css"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/LoggedInLandingPage.css",
+      "PackagePath": "staticwebassets/css/LoggedInLandingPage.css"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/Privacy.css",
+      "PackagePath": "staticwebassets/css/Privacy.css"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/PurchaseConfirmation.css",
+      "PackagePath": "staticwebassets/css/PurchaseConfirmation.css"
+    },
+    {
       "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
       "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/baseplate1.jpg",
+      "PackagePath": "staticwebassets/img/baseplate1.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/batterybox.jpg",
+      "PackagePath": "staticwebassets/img/batterybox.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/brick.jpg",
+      "PackagePath": "staticwebassets/img/brick.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/chess.jpg",
+      "PackagePath": "staticwebassets/img/chess.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/exoticpeacock.jpg",
+      "PackagePath": "staticwebassets/img/exoticpeacock.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/facebook.jpg",
+      "PackagePath": "staticwebassets/img/facebook.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/instagram.jpg",
+      "PackagePath": "staticwebassets/img/instagram.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/legobackground.jpg",
+      "PackagePath": "staticwebassets/img/legobackground.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/legodudes.jpg",
+      "PackagePath": "staticwebassets/img/legodudes.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/legowoman.png",
+      "PackagePath": "staticwebassets/img/legowoman.png"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/paris.jpg",
+      "PackagePath": "staticwebassets/img/paris.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/spaceastronaut.jpg",
+      "PackagePath": "staticwebassets/img/spaceastronaut.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/talkingsortinghat.jpg",
+      "PackagePath": "staticwebassets/img/talkingsortinghat.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/tiktok.jpg",
+      "PackagePath": "staticwebassets/img/tiktok.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/typewriter.jpg",
+      "PackagePath": "staticwebassets/img/typewriter.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/up.jpg",
+      "PackagePath": "staticwebassets/img/up.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/wheelset1.jpg",
+      "PackagePath": "staticwebassets/img/wheelset1.jpg"
     },
     {
       "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/js/site.js",

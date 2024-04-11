@@ -139,3 +139,7 @@
 /Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/obj/Debug/net8.0/testingINTEX.genruntimeconfig.cache
 /Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/obj/Debug/net8.0/ref/testingINTEX.dll
 /Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/obj/Debug/net8.0/testingINTEX.sourcelink.json
+/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/bin/Debug/net8.0/Microsoft.AspNetCore.Authorization.dll
+/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/bin/Debug/net8.0/Microsoft.AspNetCore.Metadata.dll
+/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
