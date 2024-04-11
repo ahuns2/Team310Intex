@@ -247,7 +247,6 @@
 .div-14 {
     border-radius: 31px;
     background-color: #fff;
-    display: flex;
     flex-direction: column;
     font-size: 20px;
     color: #595858;
@@ -269,8 +268,6 @@
     object-fit: auto;
     object-position: center;
     width: 100%;
-    align-self: start;
-    margin-left: 18px;
 }
 
 @media (max-width: 991px) {
@@ -281,6 +278,7 @@
 
 .div-15 {
     font-family: Poppins, sans-serif;
+    text-align: center;
 }
 
 .column-4 {
@@ -340,7 +338,6 @@
 }
 
 .div-18 {
-    margin-left: 60px;
     font: 32px Poppins, sans-serif;
 }
 

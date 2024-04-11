@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using testingINTEX.Models;
 
@@ -39,6 +40,66 @@ namespace testingINTEX.Controllers
             return View();
         }
 
+        public IActionResult CompletedSignUp()
+        {
+            return View();
+        }
         
+        public IActionResult PurchaseConfirmation()
+        {
+            return View();
+        }
+
+        public IActionResult FraudWarning()
+        {
+            return View();
+        }
+
+        public IActionResult LandingPage()
+        { 
+            return View(); 
+        }
+
+        public IActionResult LoggedInLandingPage()
+        {
+            // Retrieve the current logged-in user's ID
+            var loggedInUserId = GetCurrentUserId();
+
+            // Retrieve the recommendations for the logged-in user
+            var customer = _context.Customers.SingleOrDefault(c => c.AspUserId == loggedInUserId);
+            if (customer == null)
+            {
+                // Handle the case where the customer is not found
+                return RedirectToAction("LandingPage");
+            }
+
+            // Retrieve the recommended product IDs
+            var recommendedProductIds = new List<int?>
+            {
+                customer.Recommendation1,
+                customer.Recommendation2,
+                customer.Recommendation3,
+                customer.Recommendation4
+            };
+
+            // Fetch the recommended products from the database
+            var recommendedProducts = _context.Products.Where(p => recommendedProductIds.Contains(p.ProductId)).ToList();
+
+            return View(recommendedProducts);
+        }
+
+        private Guid GetCurrentUserId()
+        {
+            // Get the user ID from the ClaimsPrincipal
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+
+            if (userIdClaim != null && Guid.TryParse(userIdClaim.Value, out Guid userId))
+            {
+                return userId;
+            }
+
+            return Guid.Empty; // Or throw an exception, depending on your requirements
+        }
     }
 }
+

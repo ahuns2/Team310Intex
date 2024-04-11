@@ -26,7 +26,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Shop</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LoggedInLandingPage">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Cart">Cart</a>
@@ -43,17 +43,10 @@
         </main>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <p style="font-size: 24px;">Privacy Policy</p>
-                    <p>@@2024 TheLegoLady All Rights Reserved</p>
-                </div>
-            </div>
-        </div>
+    <footer style="background-color: #ffdf00; text-align: center; padding: 10px 0; color: black; font-weight: bold; font-size: 24px; width: 100%; position: absolute; bottom: 0;">
+        <p>Privacy Policy @@2024 TheLegoLady All Rights Reserved</p><a style="color: black !important;" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Our Privacy Policy</a>
     </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -61,3 +54,9 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+﻿
+<head>
+    <link rel="stylesheet" href="/css/LandingPage.css">
+</head>
+
+@* Cookie stuff
+ *@
+<div id="cookieConsent" class="cookie-consent">
+    <div class="cookie-message">
+        We use cookies to improve your experience on our website. By continuing to browse this site, you agree to our use of cookies.
+        <button id="acceptCookiesBtn" class="accept-cookies-btn">Got it!</button>
+        <a href="/privacy-policy" class="learn-more-link">Learn more</a>
+    </div>
+</div>
+
+<div class="div-101">
+    <div class="div-102">
+        <div>
+            <div class="div-103">
+                <img loading="lazy"
+                     src="/img/legobackground.jpg"
+                     class="img" />
+                <div class="div-104">
+                    <div class="div-105">Shop Lego Sets</div>
+                    <div class="div-106">Add something new to your collection today!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@model List<Product>  
+
+@{
+    ViewData["Title"] = "Recommended Products";
+}
+
+<h1>Recommended Products</h1>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-3">
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="@product.ImgLink" alt="@product.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">Price: $@product.Price</p>
+                    <!-- Add other product details as needed -->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a asp-controller="Product" asp-action="Details" asp-route-id="@product.ProductId" class="btn btn-sm btn-outline-secondary">View Details</a>
+                            <!-- Add other actions/buttons as needed -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+@* Cookie Stuff
+ *@<script>
+       // JavaScript code to handle cookie consent
+       document.addEventListener('DOMContentLoaded', function () {
+           var cookieConsent = document.getElementById('cookieConsent');
+           var acceptCookiesBtn = document.getElementById('acceptCookiesBtn');
+
+
+           // Check if user has previously accepted cookies
+           var cookiesAccepted = localStorage.getItem('cookiesAccepted');
+
+           // Display the cookie consent notification if user hasn't accepted cookies
+           if (!cookiesAccepted) {
+               cookieConsent.style.display = 'block';
+           }
+
+           // Event listener for accept cookies button
+           acceptCookiesBtn.addEventListener('click', function () {
+               localStorage.setItem('cookiesAccepted', true);
+               cookieConsent.style.display = 'none';
+           });
+       });
+</script>

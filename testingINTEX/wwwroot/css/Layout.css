@@ -9,19 +9,6 @@
     color: red !important;
 }
 
-/* Footer */
-footer {
-    background-color: #ffdf00;
-    text-align: center;
-    padding: 20px 0;
-    color: black;
-    font-weight: bold;
-    position: fixed; /* Fix the footer position */
-    bottom: 0; /* Stick it to the bottom */
-    width: 100%; /* Full width */
-    z-index: 1000; /* Ensure footer is on top of other content */
-}
-
 /* Body padding to compensate for footer */
 body {
     padding-bottom: 70px; /* Adjust according to your footer height */
