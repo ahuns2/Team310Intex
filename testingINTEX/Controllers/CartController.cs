@@ -44,7 +44,7 @@ namespace testingINTEX.Controllers
             // Update the cart in the session
             HttpContext.Session.SetObject("Cart", cart);
 
-            return RedirectToAction("Index", "Home"); // Redirect to the home page or cart page
+            return RedirectToAction("Products", "Home"); // Redirect to the home page or cart page
         }
     }
 }
