@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xxTkgqduTcHOGPWZGZGXufNg6m5LD3LoQV0Kf6JADjs=",
+  "Hash": "uD3p871I9zK3681XfbCgd9avBLDECApsDrhRLzBDftE=",
   "Source": "testingINTEX",
   "BasePath": "_content/testingINTEX",
   "Mode": "Default",
@@ -1326,6 +1326,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/Privacy.css"
+    },
+    {
+      "Identity": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/css/Products.css",
+      "SourceId": "testingINTEX",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/",
+      "BasePath": "_content/testingINTEX",
+      "RelativePath": "css/Products.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/Products.css"
     },
     {
       "Identity": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/css/PurchaseConfirmation.css",

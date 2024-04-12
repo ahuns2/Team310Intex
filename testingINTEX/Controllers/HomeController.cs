@@ -181,7 +181,7 @@ namespace testingINTEX.Controllers
         public IActionResult AdmimSingleProduct(Product response)
         {
             _repo.AdminAddProduct(response); //add record to the database
-            return View("Index");
+            return View("AdminHomePage");
         }
         
         [Authorize(Roles = "Admin")]
@@ -237,7 +237,7 @@ namespace testingINTEX.Controllers
                 pageNum = 1; // Ensure pageNum is at least 1
             }
 
-            var orders = _repo.Orders.OrderBy(x => x.Date).Skip((pageNum - 1) * pageSize).Take(pageSize).ToList();
+            var orders = _repo.Orders.OrderByDescending(x => x.TransactionId).Skip((pageNum - 1) * pageSize).Take(pageSize).ToList();
             var fraudulentOrders = _repo.Orders.Where(o => o.Fraud == 1).OrderByDescending(x => x.Date).Take(10).ToList();
 
             var viewOrderModel = new OrdersListViewModel
@@ -248,7 +248,7 @@ namespace testingINTEX.Controllers
                 {
                     CurrentPage = pageNum,
                     ItemsPerPage = pageSize,
-                    TotalItems = _repo.Orders.Count() // Assuming you want to paginate all orders
+                    TotalItems = 1000 // Assuming you want to paginate all orders
                 }
             };
 
