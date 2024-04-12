@@ -1,6 +1,6 @@
 ﻿@model Product
 
-<h1>Enter a Movie</h1>
+<h1>Enter New Product</h1>
 
 <!--the form to submit a movie-->
 <form method="post">
@@ -10,23 +10,47 @@
     <br />
     <br />
     <label asp-for="Year">Year: </label>
-    <input asp-for="Year" required />
+    <input asp-for="Year" type="number" min="1950" max="2024" required />
     <br />
     <br />
     <label asp-for="NumParts">Number of Parts: </label>
-    <input asp-for="NumParts" required />
+    <input asp-for="NumParts" type="number" min="0" required />
     <br />
     <br />
     <label asp-for="Price">Price: </label>
-    <input asp-for="Price" required />
+    <input asp-for="Price" type="number" required />
     <br />
     <br />
     <label asp-for="PrimaryColor">Primary Color: </label>
-    <input asp-for="PrimaryColor" required />
+    <select asp-for="PrimaryColor" name="color">
+        <option value="Orange">Orange</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Green">Green</option>
+        <option value="Red">Red</option>
+        <option value="Grey">Grey</option>
+        <option value="White">White</option>
+        <option value="Brown">Brown</option>
+        <option value="Black">Black</option>
+        <option value="Blue">Blue</option>
+        <option value="Tan">Tan</option>
+        <option value="Pink">Pink</option>
+    </select>
     <br />
     <br />
-    <label asp-for="SecondaryColor">Secondary Color: </label>
-    <input asp-for="SecondaryColor"/>
+    <label asp-for="SecondaryColor">Secondary Color </label>
+    <select asp-for="SecondaryColor" name="color">
+        <option value="Orange">Orange</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Green">Green</option>
+        <option value="Red">Red</option>
+        <option value="Grey">Grey</option>
+        <option value="White">White</option>
+        <option value="Brown">Brown</option>
+        <option value="Black">Black</option>
+        <option value="Blue">Blue</option>
+        <option value="Tan">Tan</option>
+        <option value="Pink">Pink</option>
+    </select>
     <br />
     <br />
     <label asp-for="ImgLink">Image Link: </label>
@@ -53,5 +77,5 @@
     <input asp-for="Category3"/>
     <br />
     <br />
-    <button type="submit">Submit Movie</button>
+    <button type="submit">Submit</button>
 </form>

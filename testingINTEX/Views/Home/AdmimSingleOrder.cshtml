@@ -6,35 +6,64 @@
 <form method="post">
     <input type="hidden" asp-for="TransactionId" />
     <label asp-for="Date">Date Order Placed: </label>
-    <input asp-for="Date" required />
+    <input asp-for="Date" type="date" required />
     <br />
     <br />
     <label asp-for="DayOfWeek">Day of Week Order Placed: </label>
-    <input asp-for="DayOfWeek" required />
+    <select asp-for="DayOfWeek">
+        <option value="Sun">Sunday</option>
+        <option value="Mon">Monday</option>
+        <option value="Tue">Tuesday</option>
+        <option value="Wed">Wednesday</option>
+        <option value="Thu">Thursday</option>
+        <option value="Fri">Friday</option>
+        <option value="Sat">Saturday</option>
+    </select>
     <br />
     <br />
     <label asp-for="Time">Time Order Placed: </label>
-    <input asp-for="Time" required />
+    <input asp-for="Time" type="number" required />
     <br />
     <br />
     <label asp-for="EntryMode">Entry Mode: </label>
-    <input asp-for="EntryMode" required />
+    <select asp-for="EntryMode">
+        <option value="CVV">CVV</option>
+        <option value="CVC">CVC</option>
+        <option value="PIN">PIN</option>
+        <option value="Tap">Tap</option>
+    </select>
     <br />
     <br />
     <label asp-for="Amount">Amount: </label>
-    <input asp-for="Amount" required />
+    <input asp-for="Amount" type="number" required />
     <br />
     <br />
     <label asp-for="TypeOfTransaction">Type of Transaction: </label>
-    <input asp-for="TypeOfTransaction"/>
+        <select asp-for="TypeOfTransaction">
+            <option value="Online">Online</option>
+            <option value="POS">POS</option>
+            <option value="ATM">ATM</option>
+        </select>
     <br />
     <br />
-    <label asp-for="CountryOfTransaction">Country of Transaction: </label>
-    <input asp-for="CountryOfTransaction"/>
+    <label asp-for="CountryOfTransaction">Country of Transaction:</label>
+    <select asp-for="CountryOfTransaction">
+        <option value="USA">USA</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="India">India</option>
+        <option value="China">China</option>
+        <option value="Russia">Russia</option>
+    </select>
     <br />
     <br />
-    <label asp-for="ShippingAddress">Shipping Address: </label>
-    <input asp-for="ShippingAddress"/>
+    <label>Shipping Address:</label>
+    <select asp-for="ShippingAddress">
+        <option value="USA">USA</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="India">India</option>
+        <option value="China">China</option>
+        <option value="Russia">Russia</option>
+    </select>
     <br />
     <br />
     <label asp-for="Bank">Bank: </label>
@@ -50,5 +79,6 @@
         <option value="1">Yes</option>
         <option value="0">No</option>
     </select>
+    <br />
     <button type="submit">Place Order</button>
 </form>

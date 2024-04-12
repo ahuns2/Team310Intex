@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets/css/Privacy.css"
     },
     {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/css/Products.css",
+      "PackagePath": "staticwebassets/css/Products.css"
+    },
+    {
       "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/css/PurchaseConfirmation.css",
       "PackagePath": "staticwebassets/css/PurchaseConfirmation.css"
     },
