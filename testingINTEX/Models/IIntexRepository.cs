@@ -26,5 +26,7 @@ namespace testingINTEX.Models
         public void AdminDeleteOrder(Order order);
 
         public void SaveChanges();
+        Customer GetCustomerByAspUserId(string userId);
+        IEnumerable<Product> GetProductsByIds(IEnumerable<int> productIds);
     }
 }

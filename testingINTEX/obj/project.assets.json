@@ -3506,19 +3506,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/connorhumphrey/.nuget/packages/": {}
+    "/Users/ahunsaker2/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/connorhumphrey/RiderProjects/testingINTEX1/testingINTEX/testingINTEX.csproj",
+      "projectUniqueName": "/Users/ahunsaker2/RiderProjects/testingINTEX/testingINTEX/testingINTEX.csproj",
       "projectName": "testingINTEX",
-      "projectPath": "/Users/connorhumphrey/RiderProjects/testingINTEX1/testingINTEX/testingINTEX.csproj",
-      "packagesPath": "/Users/connorhumphrey/.nuget/packages/",
-      "outputPath": "/Users/connorhumphrey/RiderProjects/testingINTEX1/testingINTEX/obj/",
+      "projectPath": "/Users/ahunsaker2/RiderProjects/testingINTEX/testingINTEX/testingINTEX.csproj",
+      "packagesPath": "/Users/ahunsaker2/.nuget/packages/",
+      "outputPath": "/Users/ahunsaker2/RiderProjects/testingINTEX/testingINTEX/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/connorhumphrey/.nuget/NuGet/NuGet.Config"
+        "/Users/ahunsaker2/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -3612,7 +3612,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/ahunsaker2/.dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

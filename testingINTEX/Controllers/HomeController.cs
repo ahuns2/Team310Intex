@@ -621,7 +621,7 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
                 if (isFraudulent)
                 {
                     TempData["FraudPrediction"] = "Fraudulent Transaction Detected";
-                    return RedirectToAction("Confirmation", "Home"); //GRANT FRAUD BRANCH
+                    return RedirectToAction("FraudWarning", "Home");
                 }
                 else
                 {
@@ -650,34 +650,6 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
             return View(); 
         }
 
-        public IActionResult LoggedInLandingPage()
-        {
-            // Retrieve the current logged-in user's ID
-            var loggedInUserId = GetCurrentUserId();
-
-            // Retrieve the recommendations for the logged-in user
-            var customer = _repo.Customers.SingleOrDefault(c => c.AspUserId == loggedInUserId);
-            if (customer == null)
-            {
-                // Handle the case where the customer is not found
-                return RedirectToAction("LandingPage");
-            }
-
-            // Retrieve the recommended product IDs
-            var recommendedProductIds = new List<int?>
-            {
-                customer.Recommendation1,
-                customer.Recommendation2,
-                customer.Recommendation3,
-                customer.Recommendation4
-            };
-
-            // Fetch the recommended products from the database
-            var recommendedProducts = _repo.Products.Where(p => recommendedProductIds.Contains(p.ProductId)).ToList();
-
-            return View(recommendedProducts);
-        }
-
         private Guid GetCurrentUserId()
         {
             // Get the user ID from the ClaimsPrincipal
@@ -696,6 +668,46 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
         public IActionResult FraudWarning()
         {
             return View();
+        }
+        
+        //Grant Starts
+        public Customer GetCustomerByAspUserId(string userId)
+        {
+            return _repo.GetCustomerByAspUserId(userId);
+        }
+        public IActionResult LoggedInLandingPage()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToAction("LandingPage");
+            }
+            // Get the customer with the given userId
+            var customer = _repo.GetCustomerByAspUserId(userId);
+            if (customer != null)
+            {
+                // Retrieve the product IDs of recommendations for the customer
+                var recommendationIds = new List<int?>
+                {
+                    customer.Recommendation1,
+                    customer.Recommendation2,
+                    customer.Recommendation3,
+                    customer.Recommendation4
+                };
+                // Filter out null recommendation IDs
+                recommendationIds = recommendationIds.Where(id => id.HasValue).ToList();
+                // Query the Products table to find the products with the matching IDs
+                // Filter out null values and convert to non-nullable integers
+                var productIds = recommendationIds.Where(id => id.HasValue).Select(id => id.Value).ToList();
+                // Call the GetProductsByIds method with the list of non-nullable integers
+                var products = _repo.GetProductsByIds(productIds);
+                return View(products);
+            }
+            else
+            {
+                // If customer is not found, display an error message
+                return View("Error");
+            }
         }
         
     }
