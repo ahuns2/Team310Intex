@@ -1,7 +1,15 @@
 ﻿<head>
     <link rel="stylesheet" href="/css/LandingPage.css">
 </head>
+<style>
+    a {
+        text-decoration: none; /* Remove underlines from all links */
+    }
 
+    a:hover {
+        text-decoration: none; /* Remove underlines from links on hover */
+    }
+</style>
 @* Cookie stuff
  *@
 <div id="cookieConsent" class="cookie-consent">
@@ -33,40 +41,46 @@
         <div class="div-5">
             <div class="div-6">
                 <div class="column">
-                    <div class="div-7">
-                        <img loading="lazy"
-                             src="/img/exoticpeacock.jpg"
-                             class="img-2" />
-                        <div class="div-8">Exotic Peacock</div>
-                        <div class="div-11">$20</div>   
-                    </div>
+                    <a asp-controller="Home" asp-action="ItemDetails" asp-route-id="27">
+                        <div class="div-7">
+                            <img loading="lazy" src="/img/exoticpeacock.jpg" class="img-2"/>
+                            <div class="div-8">Exotic Peacock</div>
+                            <div class="div-11">$20</div>
+                        </div>
+                    </a>
                 </div>
                 <div class="column-2">
-                    <div class="div-9">
-                        <img loading="lazy"
-                             src="/img/spaceastronaut.jpg"
-                             class="img-3" />
-                        <div class="div-10">Space Astronaut</div>
-                        <div class="div-11">$55</div>
-                    </div>
+                    <a asp-controller="Home" asp-action="ItemDetails" asp-route-id="33">
+                        <div class="div-9">
+                            <img loading="lazy"
+                                 src="/img/spaceastronaut.jpg"
+                                 class="img-3"/>
+                            <div class="div-10">Space Astronaut</div>
+                            <div class="div-11">$55</div>
+                        </div>
+                    </a>
                 </div>
                 <div class="column-3">
-                    <div class="div-12">
-                        <img loading="lazy"
-                             src="/img/up.jpg"
-                             class="img-4" />
-                        <div class="div-13">“Up” House</div>
-                        <div class="div-14">$60</div>
-                    </div>
+                    <a asp-controller="Home" asp-action="ItemDetails" asp-route-id="34">
+                        <div class="div-12">
+                            <img loading="lazy"
+                                 src="/img/up.jpg"
+                                 class="img-4"/>
+                            <div class="div-13">“Up” House</div>
+                            <div class="div-14">$60</div>
+                        </div>
+                    </a>
                 </div>
                 <div class="column-4">
-                    <div class="div-15">
-                        <img loading="lazy"
-                             src="/img/talkingsortinghat.jpg"
-                             class="img-5" />
-                        <div class="div-16">Talking Sorting Hat</div>
-                        <div class="div-17">$100</div>
-                    </div>
+                    <a asp-controller="Home" asp-action="ItemDetails" asp-route-id="37">
+                        <div class="div-15">
+                            <img loading="lazy"
+                                 src="/img/talkingsortinghat.jpg"
+                                 class="img-5"/>
+                            <div class="div-16">Talking Sorting Hat</div>
+                            <div class="div-17">$100</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -76,40 +90,48 @@
         <div class="div-20">
             <div class="div-21">
                 <div class="column-4">
-                    <div class="div-22">
-                        <img loading="lazy"
-                             src="/img/brick.jpg"
-                             class="img-6" />
-                        <div class="div-23">Brick 2x2</div>
-                        <div class="div-26">$1</div>
-                    </div>
+                    <a asp-controller="Home" asp-action="ItemDetails" asp-route-id="23">
+                        <div class="div-22">
+                            <img loading="lazy"
+                                 src="/img/brick.jpg"
+                                 class="img-6"/>
+                            <div class="div-23">Brick 2x2</div>
+                            <div class="div-26">$1</div>
+                        </div>
+                    </a>
                 </div>
                 <div class="column-5">
-                    <div class="div-24">
-                        <img loading="lazy"
-                             src="/img/batterybox.jpg"
-                             class="img-7" />
-                        <div class="div-25">Battery Box</div>
-                        <div class="div-26">$2</div>
-                    </div>
+                    <a asp-controller="Home" asp-action="ItemDetails" asp-route-id="19">
+                        <div class="div-24">
+                            <img loading="lazy"
+                                 src="/img/batterybox.jpg"
+                                 class="img-7"/>
+                            <div class="div-25">Battery Box</div>
+                            <div class="div-26">$2</div>
+                        </div>
+                    </a>
                 </div>
                 <div class="column-6">
-                    <div class="div-27">
-                        <img loading="lazy"
-                             src="/img/wheelset1.jpg"
-                             class="img-8" />
-                        <div class="div-28">Wheel Sets, Black</div>
-                        <div class="div-29">$2</div>
-                    </div>
+                    <a asp-controller="Home" asp-action="ItemDetails" asp-route-id="21">
+                        <div class="div-27">
+                            <img loading="lazy"
+                                 src="/img/wheelset1.jpg"
+                                 class="img-8"/>
+                            <div class="div-28">Wheel Sets, Black</div>
+                            <div class="div-29">$2</div>
+                        </div>
+                    </a>
                 </div>
                 <div class="column-7">
-                    <div class="div-30">
-                        <img loading="lazy"
-                         src="/img/baseplate1.jpg"
-                             class="img-9" />
-                        <div class="div-31">Baseplate</div>
-                        <div class="div-32">$3</div>
-                    </div>
+                    <a asp-controller="Home" asp-action="ItemDetails" asp-route-id="22">
+                        <div class="div-30">
+                            <img loading="lazy"
+                                 src="/img/baseplate1.jpg"
+                                 class="img-9"/>
+                            <div class="div-31">Baseplate</div>
+                            <div class="div-32">$3</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
