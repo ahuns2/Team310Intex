@@ -424,6 +424,7 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
             return View(product);
         }
         
+        [Authorize] 
         public IActionResult Cart()
         {
             // Retrieve the cart data from the session
@@ -655,8 +656,7 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
 
             return Guid.Empty; // Or throw an exception, depending on your requirements
         }
-        
- 
+
 
         public IActionResult FraudWarning()
         {
