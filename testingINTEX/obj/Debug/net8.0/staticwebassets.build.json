@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AsZQ/VtYZBvigYnxhqtvHpcJs4Hqes862TDgKzgNQh0=",
+  "Hash": "48nfPtobYBGxHMz0O+l7bpk/ua9wzskXMGnvhj2xJvo=",
   "Source": "testingINTEX",
   "BasePath": "_content/testingINTEX",
   "Mode": "Default",
@@ -2808,6 +2808,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/Users/connorhumphrey/RiderProjects/testingINTEX1/testingINTEX/wwwroot/lib/pipeline/FraudPredictor.onnx",
+      "SourceId": "testingINTEX",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/connorhumphrey/RiderProjects/testingINTEX1/testingINTEX/wwwroot/",
+      "BasePath": "_content/testingINTEX",
+      "RelativePath": "lib/pipeline/FraudPredictor.onnx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/pipeline/FraudPredictor.onnx"
     }
   ]
 }

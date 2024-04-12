@@ -345,6 +345,10 @@
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
     },
     {
+      "Id": "/Users/connorhumphrey/RiderProjects/testingINTEX1/testingINTEX/wwwroot/lib/pipeline/FraudPredictor.onnx",
+      "PackagePath": "staticwebassets/lib/pipeline/FraudPredictor.onnx"
+    },
+    {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.testingINTEX.props",
       "PackagePath": "build\\testingINTEX.props"
     },

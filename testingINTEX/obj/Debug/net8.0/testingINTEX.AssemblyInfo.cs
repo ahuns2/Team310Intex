@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("testingINTEX")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d9721b1f5210cf5369b55784ef942eddbbb80c0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b124f8ed266712d7b0d5af91eddcc4953cd468e")]
 [assembly: System.Reflection.AssemblyProductAttribute("testingINTEX")]
 [assembly: System.Reflection.AssemblyTitleAttribute("testingINTEX")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

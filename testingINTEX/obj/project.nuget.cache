@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SO95UQPbwcAZlMu6+d27giFNFLd5jjMkn/PvjEJXzuH/WuujtuzeY44s36XYo3ehHgNcx+hx4GEhUC9uVopqrg==",
+  "dgSpecHash": "jrNWDVCAAy1oRVDgofNX+Wdj+4mWa0RsJk8N6Wj8u11i2Vig7KqCRA3EKvzblrJWpZDmoIuCY+e2FEJJwKSvyg==",
   "success": true,
   "projectFilePath": "/Users/connorhumphrey/RiderProjects/testingINTEX1/testingINTEX/testingINTEX.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,8 @@
     "/Users/connorhumphrey/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.1/microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
     "/Users/connorhumphrey/.nuget/packages/microsoft.extensions.options/8.0.2/microsoft.extensions.options.8.0.2.nupkg.sha512",
     "/Users/connorhumphrey/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/connorhumphrey/.nuget/packages/microsoft.ml.onnxruntime/1.17.3/microsoft.ml.onnxruntime.1.17.3.nupkg.sha512",
+    "/Users/connorhumphrey/.nuget/packages/microsoft.ml.onnxruntime.managed/1.17.3/microsoft.ml.onnxruntime.managed.1.17.3.nupkg.sha512",
     "/Users/connorhumphrey/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/connorhumphrey/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/Users/connorhumphrey/.nuget/packages/npgsql/8.0.2/npgsql.8.0.2.nupkg.sha512",
@@ -58,7 +60,7 @@
     "/Users/connorhumphrey/.nuget/packages/system.composition.runtime/6.0.0/system.composition.runtime.6.0.0.nupkg.sha512",
     "/Users/connorhumphrey/.nuget/packages/system.composition.typedparts/6.0.0/system.composition.typedparts.6.0.0.nupkg.sha512",
     "/Users/connorhumphrey/.nuget/packages/system.io.pipelines/6.0.3/system.io.pipelines.6.0.3.nupkg.sha512",
-    "/Users/connorhumphrey/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
+    "/Users/connorhumphrey/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",
     "/Users/connorhumphrey/.nuget/packages/system.reflection.metadata/6.0.1/system.reflection.metadata.6.0.1.nupkg.sha512",
     "/Users/connorhumphrey/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/connorhumphrey/.nuget/packages/system.text.encoding.codepages/6.0.0/system.text.encoding.codepages.6.0.0.nupkg.sha512",
