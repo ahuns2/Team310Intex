@@ -3511,11 +3511,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ahunsaker2/RiderProjects/testingINTEX/testingINTEX/testingINTEX.csproj",
+      "projectUniqueName": "/Users/ahunsaker2/Documents/GitHub/testingINTEX/testingINTEX/testingINTEX.csproj",
       "projectName": "testingINTEX",
-      "projectPath": "/Users/ahunsaker2/RiderProjects/testingINTEX/testingINTEX/testingINTEX.csproj",
+      "projectPath": "/Users/ahunsaker2/Documents/GitHub/testingINTEX/testingINTEX/testingINTEX.csproj",
       "packagesPath": "/Users/ahunsaker2/.nuget/packages/",
-      "outputPath": "/Users/ahunsaker2/RiderProjects/testingINTEX/testingINTEX/obj/",
+      "outputPath": "/Users/ahunsaker2/Documents/GitHub/testingINTEX/testingINTEX/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ahunsaker2/.nuget/NuGet/NuGet.Config"
