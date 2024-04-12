@@ -231,37 +231,30 @@ namespace testingINTEX.Controllers
 
         public IActionResult AdminOrderPage(int pageNum)
         {
-            //setting how many products you want per page
-            int pageSize = 100;
-            // Ensure pageNum is at least 1
+            int pageSize = 100; // setting how many products you want per page
             if (pageNum < 1)
             {
-                pageNum = 1; // Set pageNum to 1 if it's less than 1
+                pageNum = 1; // Ensure pageNum is at least 1
             }
+
+            var orders = _repo.Orders.OrderBy(x => x.Date).Skip((pageNum - 1) * pageSize).Take(pageSize).ToList();
+            var fraudulentOrders = _repo.Orders.Where(o => o.Fraud == 1).OrderByDescending(x => x.Date).Take(10).ToList();
 
             var viewOrderModel = new OrdersListViewModel
             {
-                //this grabs all the products
-                Orders = _repo.Orders
-                    .Where(o => o.Fraud == 1)
-                    .OrderBy(x => x.Date)
-                    .Take(1000)
-                    .Skip((pageNum - 1) * pageSize)
-                    .Take(pageSize)
-                    .ToList(),
-
-                //this grabs all the pagination information
+                Orders = orders,
+                FraudulentOrders = fraudulentOrders,
                 PaginationInfo = new PaginationInfo
                 {
                     CurrentPage = pageNum,
-                    ItemsPerPage = 100,
-                    TotalItems = 1000
+                    ItemsPerPage = pageSize,
+                    TotalItems = _repo.Orders.Count() // Assuming you want to paginate all orders
                 }
             };
 
-            // returns product information and pagination information
             return View(viewOrderModel);
         }
+
         
         [Authorize(Roles = "Admin")]
         //AVA: Displays the Admin single Order FORM page

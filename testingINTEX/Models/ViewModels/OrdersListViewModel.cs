@@ -8,5 +8,6 @@ namespace testingINTEX.Models.ViewModels
         // public IQueryable<Product> Products{ get; set;}
         public PaginationInfo PaginationInfo { get; set; } = new PaginationInfo();
         public List<Order> Orders { get; set; }
+        public List<Order> FraudulentOrders { get; set; }
     }
 }

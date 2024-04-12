@@ -14,7 +14,7 @@
     overflow: hidden;
     position: relative;
     display: flex;
-    min-height: 681px;
+    min-height: 400px;
     flex-grow: 1;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
