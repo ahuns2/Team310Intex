@@ -6,6 +6,21 @@ using testingINTEX.Data;
 using testingINTEX.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+var configuration = builder.Configuration;
+
+services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
+{
+    microsoftOptions.ClientId = configuration["Authentication:Microsoft:ClientId"];
+    microsoftOptions.ClientSecret = configuration["Authentication:Microsoft:ClientSecret"];
+});
+
+// services.AddAuthentication().AddGoogle(googleOptions =>
+// {
+//     googleOptions.ClientId = configuration["Authentication:Google:ClientId"];
+//     googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"];
+//     googleOptions.CallbackPath = new PathString("/signin-google");
+// });
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
