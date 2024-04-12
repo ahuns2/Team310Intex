@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wEIZcF4dNRhVzKsNXuKWVa+CiZkJbaVYAyR8nVS0Uqg=",
+  "Hash": "vRwIOayQF5U85wcDt2Fd1eHGVE+GGgg2wTaKEwFkYXA=",
   "Source": "testingINTEX",
   "BasePath": "_content/testingINTEX",
   "Mode": "Default",
@@ -1573,6 +1573,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/img/legowoman.png"
+    },
+    {
+      "Identity": "/Users/ahunsaker2/Documents/GitHub/testingINTEX/testingINTEX/wwwroot/img/NewHomePageImage.jpg",
+      "SourceId": "testingINTEX",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahunsaker2/Documents/GitHub/testingINTEX/testingINTEX/wwwroot/",
+      "BasePath": "_content/testingINTEX",
+      "RelativePath": "img/NewHomePageImage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/NewHomePageImage.jpg"
     },
     {
       "Identity": "/Users/ahunsaker2/Documents/GitHub/testingINTEX/testingINTEX/wwwroot/img/paris.jpg",

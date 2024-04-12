@@ -45,6 +45,10 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/ahunsaker2/Documents/GitHub/testingINTEX/testingINTEX/wwwroot/img/NewHomePageImage.jpg",
+      "PackagePath": "staticwebassets/img/NewHomePageImage.jpg"
+    },
+    {
       "Id": "/Users/ahunsaker2/Documents/GitHub/testingINTEX/testingINTEX/wwwroot/img/baseplate1.jpg",
       "PackagePath": "staticwebassets/img/baseplate1.jpg"
     },
