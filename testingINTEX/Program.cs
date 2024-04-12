@@ -4,6 +4,17 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using testingINTEX.Data;
 using testingINTEX.Models;
+//Grant CSP stuff
+using Microsoft.AspNetCore.Builder;
+using NWebsec.AspNetCore.Mvc;
+//Grant Rate limiting stuff
+using AspNetCoreRateLimit;
+using Microsoft.AspNetCore.RateLimiting;
+using System.Threading.RateLimiting;
+// Grant HSTS Stuff
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +55,36 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true; // make the session cookie essential
 });
 
+//Grant rate limiting stuff
+// Add rate limiting services
+// Add processing strategy service
+builder.Services.AddSingleton<IProcessingStrategy, AsyncKeyLockProcessingStrategy>();
+builder.Services.AddMemoryCache();
+builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
+builder.Services.Configure<IpRateLimitPolicies>(builder.Configuration.GetSection("IpRateLimiting"));
+
+//Grant Rate Limiting stuff
+builder.Services.AddRateLimiter(_ => _
+    .AddFixedWindowLimiter(policyName: "fixed", options =>
+    {
+        options.PermitLimit = 4;
+        options.Window = TimeSpan.FromSeconds(4);
+        options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+        options.QueueLimit = 2;
+    }));
+//GRant rate limiting
+builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+builder.Services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+
+//Grant HSTS Stuff
+builder.Services.AddHsts(options =>
+{
+    options.IncludeSubDomains = true;
+    options.MaxAge = TimeSpan.FromDays(365);
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -58,6 +99,12 @@ else
     app.UseHsts();
 }
 
+//HSTS Stuff Grant
+app.UseHttpsRedirection();
+
+//Grant rate limiting
+app.UseIpRateLimiting();
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -68,8 +115,20 @@ app.UseAuthorization();
 
 app.UseSession(); // Add session middleware
 
-app.MapControllerRoute("pagination", "Projects/{PageNum}", new {Controller = "Home", action = "LoggedInLandingPage"});
+app.MapControllerRoute("pagination", "Projects/{PageNum}", new { Controller = "Home", action = "LoggedInLandingPage" });
 app.MapDefaultControllerRoute();
 app.MapRazorPages();
 
+//Grant CSP Stuff
+app.UseCsp(options => options
+    .ScriptSources(s => s.Self().UnsafeInline().UnsafeEval())  // Allow inline scripts and eval
+    .FontSources(s => s.Self())                 // Allow fonts from the same origin
+    .UpgradeInsecureRequests()                  // Upgrade HTTP requests to HTTPS
+);
+
+//Grant HSTS Stuff
+app.UseHsts();
+
 app.Run();
+
+
