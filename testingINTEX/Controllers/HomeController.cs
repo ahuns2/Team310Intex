@@ -675,33 +675,33 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
             {
                 return RedirectToAction("LandingPage");
             }
-            // Get the customer with the given userId
             var customer = _repo.GetCustomerByAspUserId(userId);
-            if (customer != null)
+            if (customer == null)
             {
-                // Retrieve the product IDs of recommendations for the customer
-                var recommendationIds = new List<int?>
-                {
-                    customer.Recommendation1,
-                    customer.Recommendation2,
-                    customer.Recommendation3,
-                    customer.Recommendation4
-                };
-                // Filter out null recommendation IDs
-                recommendationIds = recommendationIds.Where(id => id.HasValue).ToList();
-                // Query the Products table to find the products with the matching IDs
-                // Filter out null values and convert to non-nullable integers
-                var productIds = recommendationIds.Where(id => id.HasValue).Select(id => id.Value).ToList();
-                // Call the GetProductsByIds method with the list of non-nullable integers
-                var products = _repo.GetProductsByIds(productIds);
-                return View(products);
+                // Log this case or handle it appropriately
+                _logger.LogWarning("No customer data found for user ID: {UserId}", userId);
+                // Maybe redirect to a page to complete the user profile or show a default view
+                return RedirectToAction("LandingPage");  // Assuming you have a view to handle this
             }
-            else
+            var recommendationIds = new List<int?>
             {
-                // If customer is not found, display an error message
-                return View("Error");
+                customer.Recommendation1,
+                customer.Recommendation2,
+                customer.Recommendation3,
+                customer.Recommendation4
+            }.Where(id => id.HasValue).ToList();
+
+            if (!recommendationIds.Any())
+            {
+                // Handle cases where no recommendations are set
+                ViewBag.Message = "No recommendations available. Please browse our products.";
+                return View("LandingPage"); // Create a view that handles no recommendations
             }
+
+            var products = _repo.GetProductsByIds(recommendationIds.Select(id => id.Value).ToList());
+            return View(products);
         }
+
         
     }
 }
