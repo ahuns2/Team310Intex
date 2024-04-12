@@ -1,6 +1,13 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using Microsoft.ML.OnnxRuntime;
+using Microsoft.ML.OnnxRuntime.Tensors;
 using testingINTEX.Models;
+
 
 
 namespace testingINTEX.Controllers
@@ -9,13 +16,70 @@ namespace testingINTEX.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IntexpostgresContext _context;
+        private readonly InferenceSession _session;
 
         public HomeController(ILogger<HomeController> logger, IntexpostgresContext context)
         {
-            _logger = logger;
-            _context = context;
-        }
+            {
+                _logger = logger;
+                _context = context;
 
+                // Load the ONNX model
+                _session = new InferenceSession("/Users/ahunsaker2/RiderProjects/testingINTEX/testingINTEX/FraudPredictor.onnx");
+            }
+        }
+        
+        public class FraudPrediction
+        {
+            private InferenceSession session;
+
+            public FraudPrediction(string modelPath)
+            {
+                session = new InferenceSession(modelPath);
+                if (session == null)
+                {
+                    throw new Exception("Failed to load the ONNX model at: " + modelPath);
+                }
+            }
+
+            public bool IsFraudulent(int[] inputData)
+            {
+                if (inputData == null || inputData.Length == 0)
+                {
+                    throw new ArgumentException("Input data for ONNX model is null or empty.");
+                }
+
+                // Convert int array to long array
+                long[] longInputData = inputData.Select(i => (long)i).ToArray();
+
+                // Create a tensor of type long (Int64)
+                var inputTensor = new DenseTensor<long>(longInputData, new[] { 1, longInputData.Length });
+
+                var inputs = new List<NamedOnnxValue>
+                {
+                    NamedOnnxValue.CreateFromTensor("feature_input", inputTensor)
+                };
+
+                using (var results = session.Run(inputs))
+                {
+                    if (!results.Any())
+                    {
+                        throw new Exception("ONNX model returned no results.");
+                    }
+
+                    var resultTensor = results.First().AsTensor<long>(); // Make sure to receive it as long if needed
+                    if (resultTensor == null || resultTensor.Length == 0)
+                    {
+                        throw new Exception("Result tensor is null or empty.");
+                    }
+
+                    int fraudResult = (int)resultTensor[0];
+                    return fraudResult > 0; // Adjust this based on how the model interprets 'fraudulent'
+                }
+            }
+
+        }
+        
         public IActionResult Index()
         {
             // Retrieve all customers from the database
@@ -195,8 +259,72 @@ namespace testingINTEX.Controllers
 
             // If ModelState is not valid, return to the payment view with errors
             return View("~/Views/Home/Payment.cshtml", order);
-
         }
+        
+        private int[] PreprocessOrderData(Order order)
+        {
+            // Calculate days since Jan 1, 2022
+            DateOnly startDate = new DateOnly(2022, 1, 1);
+            DateOnly orderDate = order.Date ?? DateOnly.FromDateTime(DateTime.Now); // Default to current date if null
+            int daysSinceStart = orderDate.DayNumber - startDate.DayNumber;
+
+            // Initialize input array for the model. Ensure the array size matches your model's expected input size.
+            int[] inputData = new int[35];
+
+            // Set days since start
+            inputData[0] = daysSinceStart;
+
+            // Assuming Time and Amount are already integers or convertible to int
+            inputData[1] = order.Time ?? 0; // Assuming this is an int, directly assign
+            inputData[2] = Convert.ToInt32(order.Amount); // Convert to int if Amount is not already an integer
+
+            // Mapping string values to integers based on categories
+            string[] daysOfWeek = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
+            for (int i = 0; i < daysOfWeek.Length; i++)
+            {
+                inputData[3 + i] = order.DayOfWeek == daysOfWeek[i] ? 1 : 0;
+            }
+
+            // Entry mode mapping to integers
+            inputData[10] = order.EntryMode == "CVC" ? 1 : 0;
+            inputData[11] = order.EntryMode == "PIN" ? 1 : 0;
+            inputData[12] = order.EntryMode == "Tap" ? 1 : 0;
+
+            // Type of transaction mapping to integers
+            inputData[13] = order.TypeOfTransaction == "ATM" ? 1 : 0;
+            inputData[14] = order.TypeOfTransaction == "Online" ? 1 : 0;
+            inputData[15] = order.TypeOfTransaction == "POS" ? 1 : 0;
+
+            // Country of transaction mapping to integers
+            inputData[16] = order.CountryOfTransaction == "China" ? 1 : 0;
+            inputData[17] = order.CountryOfTransaction == "India" ? 1 : 0;
+            inputData[18] = order.CountryOfTransaction == "Russia" ? 1 : 0;
+            inputData[19] = order.CountryOfTransaction == "USA" ? 1 : 0;
+            inputData[20] = order.CountryOfTransaction == "United Kingdom" ? 1 : 0;
+
+            // Shipping address mapping to integers
+            inputData[21] = order.ShippingAddress == "China" ? 1 : 0;
+            inputData[22] = order.ShippingAddress == "India" ? 1 : 0;
+            inputData[23] = order.ShippingAddress == "Russia" ? 1 : 0;
+            inputData[24] = order.ShippingAddress == "USA" ? 1 : 0;
+            inputData[25] = order.ShippingAddress == "United Kingdom" ? 1 : 0;
+
+            // Bank mapping to integers
+            string[] banks = new string[] { "Barclays", "HSBC", "Halifax", "Lloyds", "Metro", "Monzo", "RBS" };
+            for (int i = 0; i < banks.Length; i++)
+            {
+                inputData[26 + i] = order.Bank == banks[i] ? 1 : 0;
+            }
+
+            // Type of card mapping to integers
+            inputData[33] = order.TypeOfCard == "MasterCard" ? 1 : 0;
+            inputData[34] = order.TypeOfCard == "Visa" ? 1 : 0;
+
+            return inputData;
+        }
+
+
+        
         [HttpGet]
         public IActionResult Payment()
         {
@@ -217,34 +345,41 @@ namespace testingINTEX.Controllers
             // Pass the order object to the view
             return View(order);
         }
-
+        
         [HttpPost]
         public IActionResult Payment(Order order)
         {
             if (ModelState.IsValid)
             {
+                int[] inputData = PreprocessOrderData(order);
+                var predictor = new FraudPrediction("/Users/ahunsaker2/RiderProjects/testingINTEX/testingINTEX/FraudPredictor.onnx");
+                bool isFraudulent = predictor.IsFraudulent(inputData);
 
-                int? totalCostInt = order.Amount;
-                // Add the order to the database context
+                order.Fraud = isFraudulent ? 1 : 0;
                 _context.Orders.Add(order);
-
-                // Save changes to the database
                 _context.SaveChanges();
 
-                // Redirect to the confirmation view
-                return RedirectToAction("Confirmation", "Home");
+                if (isFraudulent)
+                {
+                    TempData["FraudPrediction"] = "Fraudulent Transaction Detected";
+                    return RedirectToAction("ReviewOrder", "Admin");
+                }
+                else
+                {
+                    TempData["FraudPrediction"] = "Transaction is Legitimate";
+                    return RedirectToAction("Confirmation", "Home");
+                }
             }
 
-            // If the model state is not valid, return to the Payment view with validation errors
-            return View("Payment", order);
+            return View(order);
         }
 
+
+        
         public IActionResult SendToPayment(int? amount)
         {
             TempData["Amount"] = amount;
             return RedirectToAction(("Payment"));
         }
-        
-        
     }
 }

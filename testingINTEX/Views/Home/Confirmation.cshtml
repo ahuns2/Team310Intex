@@ -1,1 +1,9 @@
 <h1>your order has been placed</h1>
+
+<br/><br/>
+
+<h1>Order Confirmation</h1>
+@if(TempData["FraudPrediction"] != null)
+{
+    <p>@TempData["FraudPrediction"]</p>
+}
