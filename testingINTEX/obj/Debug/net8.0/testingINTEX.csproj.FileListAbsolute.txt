@@ -886,3 +886,7 @@
 /Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/obj/Debug/net8.0/ref/testingINTEX.dll
 /Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.Google.dll
 /Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll
+/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/bin/Debug/net8.0/AspNetCoreRateLimit.dll
+/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/bin/Debug/net8.0/NWebsec.AspNetCore.Core.dll
+/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/bin/Debug/net8.0/NWebsec.AspNetCore.Middleware.dll
+/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/bin/Debug/net8.0/NWebsec.AspNetCore.Mvc.dll
