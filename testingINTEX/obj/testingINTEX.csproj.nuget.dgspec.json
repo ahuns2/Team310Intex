@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/testingINTEX.csproj": {}
+    "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/testingINTEX.csproj": {}
   },
   "projects": {
-    "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/testingINTEX.csproj": {
+    "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/testingINTEX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/testingINTEX.csproj",
+        "projectUniqueName": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/testingINTEX.csproj",
         "projectName": "testingINTEX",
-        "projectPath": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/testingINTEX.csproj",
+        "projectPath": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/testingINTEX.csproj",
         "packagesPath": "/Users/avawilliams/.nuget/packages/",
-        "outputPath": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/obj/",
+        "outputPath": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/avawilliams/.nuget/NuGet/NuGet.Config"
@@ -38,6 +38,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.AspNetCore.Authentication.MicrosoftAccount": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.AspNetCore.Authorization": {
               "target": "Package",
               "version": "[8.0.4, )"
@@ -71,6 +79,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[8.0.3, )"
+            },
+            "Microsoft.ML.OnnxRuntime": {
+              "target": "Package",
+              "version": "[1.17.3, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

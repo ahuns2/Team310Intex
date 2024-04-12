@@ -64,5 +64,21 @@ namespace testingINTEX.Models
         {
             _context.SaveChanges();
         }
+        public Customer GetCustomerByAspUserId(string userId)
+        {
+            // Parse the string userId to a Guid
+            Guid parsedUserId;
+            if (!Guid.TryParse(userId, out parsedUserId))
+            {
+                // Handle invalid userId here, or return null, or throw an exception
+                return null;
+            }
+            // Implement the logic to retrieve the customer by ASP.NET Core Identity user ID
+            return _context.Customers.FirstOrDefault(c => c.AspUserId == parsedUserId);
+        }
+        public IEnumerable<Product> GetProductsByIds(IEnumerable<int> productIds)
+        {
+            return _context.Products.Where(p => productIds.Contains(p.ProductId)).ToList();
+        }
     }
 }

@@ -73,6 +73,35 @@ ViewData["Title"] = "View Item";
             </div>
         </div>
     </div>
+
+    @if (ViewBag.RecommendedProducts != null && ViewBag.RecommendedProducts.Count > 0)
+    {
+    <!-- Display recommended products -->
+    <div class="recommended-products">
+        <h2>Recommended Products</h2>
+        <div class="row">
+            @foreach (var recommendedProduct in ViewBag.RecommendedProducts)
+            {
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="@recommendedProduct.ImgLink" class="card-img-top" alt="@recommendedProduct.Name">
+                    <div class="card-body">
+                        <h5 class="card-title">@recommendedProduct.Name</h5>
+                        <p class="card-text">$@recommendedProduct.Price</p>
+                        <a href="@Url.Action("ItemDetails", "Home", new { id = recommendedProduct.ProductId })" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+    }
+    else
+    {
+    <!-- Display a message when there are no recommended products -->
+    <p>No recommended products available.</p>
+    }
+    
 </div>
 
 

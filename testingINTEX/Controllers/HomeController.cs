@@ -6,29 +6,96 @@ using Microsoft.AspNetCore.Mvc;
 using testingINTEX.Models;
 using testingINTEX.Models;
 using testingINTEX.Models.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using Microsoft.ML.OnnxRuntime;
+using Microsoft.ML.OnnxRuntime.Tensors;
+using testingINTEX.Models;
 
 namespace testingINTEX.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        // private UserManager<AppUser> _userManager;
-        // private IPasswordHasher<AppUser> passwordHasher;
-
         private readonly IIntexRepository _repo;
-        //private readonly IntexpostgresContext _context;
+        private readonly IntexpostgresContext _context;
+        // private readonly UserManager<AppUser> _userManager;
+        // private readonly IPasswordHasher<AppUser> passwordHasher;
+        private readonly InferenceSession _session;
+        private readonly IWebHostEnvironment _env;
 
-        public HomeController(ILogger<HomeController> logger, IIntexRepository temp
-           // UserManager<AppUser> userManager, IPasswordHasher<AppUser> passwordHash, IntexpostgresContext context)
-           )
+        public HomeController(ILogger<HomeController> logger, IIntexRepository temp, IntexpostgresContext context, IWebHostEnvironment env
+            /* UserManager<AppUser> userManager, IPasswordHasher<AppUser> passwordHash */)
         {
             _logger = logger;
             _repo = temp;
+            _context = context;
             // _userManager = userManager;
             // passwordHasher = passwordHash;
-            //_context = context;
+            _env = env;
+
+            // Use a relative path to locate the ONNX model file based on the environment
+            var modelFilePath = Path.Combine(_env.WebRootPath, "lib", "pipeline", "FraudPredictor.onnx");
+
+            // Load the ONNX model
+            _session = new InferenceSession(modelFilePath);
         }
 
+        public class FraudPrediction
+        {
+            private InferenceSession session;
+
+            public FraudPrediction(string modelPath)
+            {
+                session = new InferenceSession(modelPath);
+                if (session == null)
+                {
+                    throw new Exception("Failed to load the ONNX model at: " + modelPath);
+                }
+            }
+
+            public bool IsFraudulent(int[] inputData)
+            {
+                if (inputData == null || inputData.Length == 0)
+                {
+                    throw new ArgumentException("Input data for ONNX model is null or empty.");
+                }
+
+                // Convert int array to long array
+                long[] longInputData = inputData.Select(i => (long)i).ToArray();
+
+                // Create a tensor of type long (Int64)
+                var inputTensor = new DenseTensor<long>(longInputData, new[] { 1, longInputData.Length });
+
+                var inputs = new List<NamedOnnxValue>
+                {
+                    NamedOnnxValue.CreateFromTensor("feature_input", inputTensor)
+                };
+
+                using (var results = session.Run(inputs))
+                {
+                    if (!results.Any())
+                    {
+                        throw new Exception("ONNX model returned no results.");
+                    }
+
+                    var resultTensor = results.First().AsTensor<long>(); // Make sure to receive it as long if needed
+                    if (resultTensor == null || resultTensor.Length == 0)
+                    {
+                        throw new Exception("Result tensor is null or empty.");
+                    }
+
+                    int fraudResult = (int)resultTensor[0];
+                    return fraudResult > 0; // Adjust this based on how the model interprets 'fraudulent'
+                }
+            }
+
+        }
+        
         public IActionResult Index()
         {
             return RedirectToAction("LoggedInLandingPage");
@@ -164,37 +231,30 @@ namespace testingINTEX.Controllers
 
         public IActionResult AdminOrderPage(int pageNum)
         {
-            //setting how many products you want per page
-            int pageSize = 100;
-            // Ensure pageNum is at least 1
+            int pageSize = 100; // setting how many products you want per page
             if (pageNum < 1)
             {
-                pageNum = 1; // Set pageNum to 1 if it's less than 1
+                pageNum = 1; // Ensure pageNum is at least 1
             }
+
+            var orders = _repo.Orders.OrderBy(x => x.Date).Skip((pageNum - 1) * pageSize).Take(pageSize).ToList();
+            var fraudulentOrders = _repo.Orders.Where(o => o.Fraud == 1).OrderByDescending(x => x.Date).Take(10).ToList();
 
             var viewOrderModel = new OrdersListViewModel
             {
-                //this grabs all the products
-                Orders = _repo.Orders
-                    .Where(o => o.Fraud == 1)
-                    .OrderBy(x => x.Date)
-                    .Take(1000)
-                    .Skip((pageNum - 1) * pageSize)
-                    .Take(pageSize)
-                    .ToList(),
-
-                //this grabs all the pagination information
+                Orders = orders,
+                FraudulentOrders = fraudulentOrders,
                 PaginationInfo = new PaginationInfo
                 {
                     CurrentPage = pageNum,
-                    ItemsPerPage = 100,
-                    TotalItems = 1000
+                    ItemsPerPage = pageSize,
+                    TotalItems = _repo.Orders.Count() // Assuming you want to paginate all orders
                 }
             };
 
-            // returns product information and pagination information
             return View(viewOrderModel);
         }
+
         
         [Authorize(Roles = "Admin")]
         //AVA: Displays the Admin single Order FORM page
@@ -321,10 +381,15 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
         public IActionResult ItemDetails(int id)
         {
             // Retrieve the product details from your data source based on the id
-            var product = _repo.Products.FirstOrDefault(p => p.ProductId == id);
+            var product = _context.Products.FirstOrDefault(p => p.ProductId == id);
+
+            if (product == null)
+            {
+                return NotFound(); // Product not found
+            }
 
             // Retrieve transactions associated with the product that have ratings
-            var transactionsWithRatings = _repo.LineItems
+            var transactionsWithRatings = _context.LineItems
                 .Where(t => t.ProductId == id && t.Rating != null)
                 .ToList();
 
@@ -335,8 +400,27 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
                 averageRating = transactionsWithRatings.Average(t => t.Rating);
             }
 
-            // Pass the product and its average rating to the view
+            // Retrieve recommended product IDs from the current product's recommendation columns
+            var recommendedProductIds = new List<int?>
+            {
+                product.Recommendation1,
+                product.Recommendation2,
+                product.Recommendation3,
+                product.Recommendation4,
+                product.Recommendation5
+            };
+
+            // Filter out null or zero recommendation IDs
+            recommendedProductIds = recommendedProductIds.Where(id => id != null && id != 0).ToList();
+
+            // Retrieve recommended products based on the recommendation IDs
+            var recommendedProducts = _repo.Products
+                .Where(p => recommendedProductIds.Contains(p.ProductId))
+                .ToList();
+
+            // Pass the product, its average rating, and recommended products to the view
             ViewBag.AverageRating = averageRating;
+            ViewBag.RecommendedProducts = recommendedProducts;
             return View(product);
         }
         
@@ -424,6 +508,70 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
             return View("~/Views/Home/Payment.cshtml", order);
 
         }
+        
+        private int[] PreprocessOrderData(Order order)
+        {
+            // Calculate days since Jan 1, 2022
+            DateOnly startDate = new DateOnly(2022, 1, 1);
+            DateOnly orderDate = order.Date ?? DateOnly.FromDateTime(DateTime.Now); // Default to current date if null
+            int daysSinceStart = orderDate.DayNumber - startDate.DayNumber;
+
+            // Initialize input array for the model. Ensure the array size matches your model's expected input size.
+            int[] inputData = new int[35];
+
+            // Set days since start
+            inputData[0] = daysSinceStart;
+
+            // Assuming Time and Amount are already integers or convertible to int
+            inputData[1] = order.Time ?? 0; // Assuming this is an int, directly assign
+            inputData[2] = Convert.ToInt32(order.Amount); // Convert to int if Amount is not already an integer
+
+            // Mapping string values to integers based on categories
+            string[] daysOfWeek = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
+            for (int i = 0; i < daysOfWeek.Length; i++)
+            {
+                inputData[3 + i] = order.DayOfWeek == daysOfWeek[i] ? 1 : 0;
+            }
+
+            // Entry mode mapping to integers
+            inputData[10] = order.EntryMode == "CVC" ? 1 : 0;
+            inputData[11] = order.EntryMode == "PIN" ? 1 : 0;
+            inputData[12] = order.EntryMode == "Tap" ? 1 : 0;
+
+            // Type of transaction mapping to integers
+            inputData[13] = order.TypeOfTransaction == "ATM" ? 1 : 0;
+            inputData[14] = order.TypeOfTransaction == "Online" ? 1 : 0;
+            inputData[15] = order.TypeOfTransaction == "POS" ? 1 : 0;
+
+            // Country of transaction mapping to integers
+            inputData[16] = order.CountryOfTransaction == "China" ? 1 : 0;
+            inputData[17] = order.CountryOfTransaction == "India" ? 1 : 0;
+            inputData[18] = order.CountryOfTransaction == "Russia" ? 1 : 0;
+            inputData[19] = order.CountryOfTransaction == "USA" ? 1 : 0;
+            inputData[20] = order.CountryOfTransaction == "United Kingdom" ? 1 : 0;
+
+            // Shipping address mapping to integers
+            inputData[21] = order.ShippingAddress == "China" ? 1 : 0;
+            inputData[22] = order.ShippingAddress == "India" ? 1 : 0;
+            inputData[23] = order.ShippingAddress == "Russia" ? 1 : 0;
+            inputData[24] = order.ShippingAddress == "USA" ? 1 : 0;
+            inputData[25] = order.ShippingAddress == "United Kingdom" ? 1 : 0;
+
+            // Bank mapping to integers
+            string[] banks = new string[] { "Barclays", "HSBC", "Halifax", "Lloyds", "Metro", "Monzo", "RBS" };
+            for (int i = 0; i < banks.Length; i++)
+            {
+                inputData[26 + i] = order.Bank == banks[i] ? 1 : 0;
+            }
+
+            // Type of card mapping to integers
+            inputData[33] = order.TypeOfCard == "MasterCard" ? 1 : 0;
+            inputData[34] = order.TypeOfCard == "Visa" ? 1 : 0;
+
+            return inputData;
+        }
+
+        
         [HttpGet]
         public IActionResult Payment()
         {
@@ -444,27 +592,38 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
             // Pass the order object to the view
             return View(order);
         }
-
+        
         [HttpPost]
         public IActionResult Payment(Order order)
         {
+            
             if (ModelState.IsValid)
             {
+                int[] inputData = PreprocessOrderData(order);
+                
 
-                int? totalCostInt = order.Amount;
-                // Add the order to the database context
-                _repo.Orders.Add(order);
-                _repo.SaveChanges();
+                // Use a relative path to locate the ONNX model file based on the environment
+                var modelFilePath = Path.Combine(_env.WebRootPath, "lib", "pipeline", "FraudPredictor.onnx");
+                var predictor = new FraudPrediction(modelFilePath);
+                bool isFraudulent = predictor.IsFraudulent(inputData);
 
-                // Save changes to the database
-                _repo.SaveChanges();
+                order.Fraud = isFraudulent ? 1 : 0;
+                _context.Orders.Add(order);
+                _context.SaveChanges();
 
-                // Redirect to the confirmation view
-                return RedirectToAction("Confirmation", "Home");
+                if (isFraudulent)
+                {
+                    TempData["FraudPrediction"] = "Fraudulent Transaction Detected";
+                    return RedirectToAction("FraudWarning", "Home");
+                }
+                else
+                {
+                    TempData["FraudPrediction"] = "Transaction is Legitimate";
+                    return RedirectToAction("Confirmation", "Home");
+                }
             }
 
-            // If the model state is not valid, return to the Payment view with validation errors
-            return View("Payment", order);
+            return View(order);
         }
 
         public IActionResult SendToPayment(int? amount)
@@ -482,34 +641,6 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
         public IActionResult LandingPage()
         { 
             return View(); 
-        }
-
-        public IActionResult LoggedInLandingPage()
-        {
-            // Retrieve the current logged-in user's ID
-            var loggedInUserId = GetCurrentUserId();
-
-            // Retrieve the recommendations for the logged-in user
-            var customer = _repo.Customers.SingleOrDefault(c => c.AspUserId == loggedInUserId);
-            if (customer == null)
-            {
-                // Handle the case where the customer is not found
-                return RedirectToAction("LandingPage");
-            }
-
-            // Retrieve the recommended product IDs
-            var recommendedProductIds = new List<int?>
-            {
-                customer.Recommendation1,
-                customer.Recommendation2,
-                customer.Recommendation3,
-                customer.Recommendation4
-            };
-
-            // Fetch the recommended products from the database
-            var recommendedProducts = _repo.Products.Where(p => recommendedProductIds.Contains(p.ProductId)).ToList();
-
-            return View(recommendedProducts);
         }
 
         private Guid GetCurrentUserId()
@@ -531,6 +662,46 @@ public IActionResult Products(string[] categories, string[] colors, int page = 1
         {
             return View();
         }
+        
+        //Grant Starts
+        public Customer GetCustomerByAspUserId(string userId)
+        {
+            return _repo.GetCustomerByAspUserId(userId);
+        }
+        public IActionResult LoggedInLandingPage()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToAction("LandingPage");
+            }
+            var customer = _repo.GetCustomerByAspUserId(userId);
+            if (customer == null)
+            {
+                // Log this case or handle it appropriately
+                _logger.LogWarning("No customer data found for user ID: {UserId}", userId);
+                // Maybe redirect to a page to complete the user profile or show a default view
+                return RedirectToAction("LandingPage");  // Assuming you have a view to handle this
+            }
+            var recommendationIds = new List<int?>
+            {
+                customer.Recommendation1,
+                customer.Recommendation2,
+                customer.Recommendation3,
+                customer.Recommendation4
+            }.Where(id => id.HasValue).ToList();
+
+            if (!recommendationIds.Any())
+            {
+                // Handle cases where no recommendations are set
+                ViewBag.Message = "No recommendations available. Please browse our products.";
+                return View("LandingPage"); // Create a view that handles no recommendations
+            }
+
+            var products = _repo.GetProductsByIds(recommendationIds.Select(id => id.Value).ToList());
+            return View(products);
+        }
+
         
     }
 }

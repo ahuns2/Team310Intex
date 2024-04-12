@@ -1,348 +1,360 @@
 {
   "Files": [
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/obj/Debug/net8.0/scopedcss/projectbundle/testingINTEX.bundle.scp.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/obj/Debug/net8.0/scopedcss/projectbundle/testingINTEX.bundle.scp.css",
       "PackagePath": "staticwebassets/testingINTEX.bundle.scp.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/About.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/css/About.css",
       "PackagePath": "staticwebassets/css/About.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/CompletedSignUp.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/css/CompletedSignUp.css",
       "PackagePath": "staticwebassets/css/CompletedSignUp.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/FraudWarning.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/css/FraudWarning.css",
       "PackagePath": "staticwebassets/css/FraudWarning.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/LandingPage.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/css/LandingPage.css",
       "PackagePath": "staticwebassets/css/LandingPage.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/Layout.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/css/Layout.css",
       "PackagePath": "staticwebassets/css/Layout.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/LoggedInLandingPage.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/css/LoggedInLandingPage.css",
       "PackagePath": "staticwebassets/css/LoggedInLandingPage.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/Privacy.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/css/Privacy.css",
       "PackagePath": "staticwebassets/css/Privacy.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/PurchaseConfirmation.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/css/PurchaseConfirmation.css",
       "PackagePath": "staticwebassets/css/PurchaseConfirmation.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/css/site.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/favicon.ico",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/baseplate1.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/NewHomePageImage.jpg",
+      "PackagePath": "staticwebassets/img/NewHomePageImage.jpg"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/baseplate1.jpg",
       "PackagePath": "staticwebassets/img/baseplate1.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/batterybox.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/batterybox.jpg",
       "PackagePath": "staticwebassets/img/batterybox.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/brick.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/brick.jpg",
       "PackagePath": "staticwebassets/img/brick.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/chess.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/chess.jpg",
       "PackagePath": "staticwebassets/img/chess.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/exoticpeacock.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/exoticpeacock.jpg",
       "PackagePath": "staticwebassets/img/exoticpeacock.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/facebook.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/facebook.jpg",
       "PackagePath": "staticwebassets/img/facebook.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/instagram.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/instagram.jpg",
       "PackagePath": "staticwebassets/img/instagram.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/legobackground.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/legobackground.jpg",
       "PackagePath": "staticwebassets/img/legobackground.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/legodudes.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/legodudes.jpg",
       "PackagePath": "staticwebassets/img/legodudes.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/legowoman.png",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/legowoman.png",
       "PackagePath": "staticwebassets/img/legowoman.png"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/paris.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/paris.jpg",
       "PackagePath": "staticwebassets/img/paris.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/spaceastronaut.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/spaceastronaut.jpg",
       "PackagePath": "staticwebassets/img/spaceastronaut.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/talkingsortinghat.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/talkingsortinghat.jpg",
       "PackagePath": "staticwebassets/img/talkingsortinghat.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/tiktok.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/tiktok.jpg",
       "PackagePath": "staticwebassets/img/tiktok.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/typewriter.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/typewriter.jpg",
       "PackagePath": "staticwebassets/img/typewriter.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/up.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/up.jpg",
       "PackagePath": "staticwebassets/img/up.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/img/wheelset1.jpg",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/img/wheelset1.jpg",
       "PackagePath": "staticwebassets/img/wheelset1.jpg"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/js/site.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/LICENSE",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/LICENSE",
       "PackagePath": "staticwebassets/lib/bootstrap"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/jquery-validation/LICENSE.md",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/jquery-validation/LICENSE.md",
       "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/jquery-validation/dist/additional-methods.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/jquery/LICENSE.txt",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/jquery/LICENSE.txt",
       "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/jquery/dist/jquery.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/jquery/dist/jquery.js",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/jquery/dist/jquery.min.js",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/jquery/dist/jquery.min.js",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
     },
     {
-      "Id": "/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/wwwroot/lib/jquery/dist/jquery.min.map",
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/jquery/dist/jquery.min.map",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/pipeline/FraudPredictor.onnx",
+      "PackagePath": "staticwebassets/lib/pipeline/FraudPredictor.onnx"
+    },
+    {
+      "Id": "/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/wwwroot/lib/qrcode/qrcode.min.js",
+      "PackagePath": "staticwebassets/lib/qrcode/qrcode.min.js"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.testingINTEX.props",

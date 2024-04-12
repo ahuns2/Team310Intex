@@ -1,7 +1,6 @@
 ﻿<head>
     <link rel="stylesheet" href="/css/LandingPage.css">
 </head>
-
 @* Cookie stuff
  *@
 <div id="cookieConsent" class="cookie-consent">
@@ -11,13 +10,12 @@
         <a asp-controller="Home" asp-action="Privacy" class="learn-more-link">Learn more</a>
     </div>
 </div>
-
 <div class="div-101">
     <div class="div-102">
         <div>
             <div class="div-103">
                 <img loading="lazy"
-                     src="/img/legobackground.jpg"
+                     src="/img/NewHomePageImage.jpg"
                      class="img" />
                 <div class="div-104">
                     <div class="div-105">Shop Lego Sets</div>
@@ -38,7 +36,7 @@
                              src="/img/exoticpeacock.jpg"
                              class="img-2" />
                         <div class="div-8">Exotic Peacock</div>
-                        <div class="div-11">$20</div>   
+                        <div class="div-11">$20.00</div>
                     </div>
                 </div>
                 <div class="column-2">
@@ -47,7 +45,7 @@
                              src="/img/spaceastronaut.jpg"
                              class="img-3" />
                         <div class="div-10">Space Astronaut</div>
-                        <div class="div-11">$55</div>
+                        <div class="div-11">$55.00</div>
                     </div>
                 </div>
                 <div class="column-3">
@@ -56,7 +54,7 @@
                              src="/img/up.jpg"
                              class="img-4" />
                         <div class="div-13">“Up” House</div>
-                        <div class="div-14">$60</div>
+                        <div class="div-14">$60.00</div>
                     </div>
                 </div>
                 <div class="column-4">
@@ -65,7 +63,7 @@
                              src="/img/talkingsortinghat.jpg"
                              class="img-5" />
                         <div class="div-16">Talking Sorting Hat</div>
-                        <div class="div-17">$100</div>
+                        <div class="div-17">$100.00</div>
                     </div>
                 </div>
             </div>
@@ -81,7 +79,7 @@
                              src="/img/brick.jpg"
                              class="img-6" />
                         <div class="div-23">Brick 2x2</div>
-                        <div class="div-26">$1</div>
+                        <div class="div-26">$1.00</div>
                     </div>
                 </div>
                 <div class="column-5">
@@ -90,7 +88,7 @@
                              src="/img/batterybox.jpg"
                              class="img-7" />
                         <div class="div-25">Battery Box</div>
-                        <div class="div-26">$2</div>
+                        <div class="div-26">$2.00</div>
                     </div>
                 </div>
                 <div class="column-6">
@@ -99,38 +97,34 @@
                              src="/img/wheelset1.jpg"
                              class="img-8" />
                         <div class="div-28">Wheel Sets, Black</div>
-                        <div class="div-29">$2</div>
+                        <div class="div-29">$2.00</div>
                     </div>
                 </div>
                 <div class="column-7">
                     <div class="div-30">
                         <img loading="lazy"
-                         src="/img/baseplate1.jpg"
+                             src="/img/baseplate1.jpg"
                              class="img-9" />
                         <div class="div-31">Baseplate</div>
-                        <div class="div-32">$3</div>
+                        <div class="div-32">$3.00</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @* Cookie Stuff
  *@<script>
     // JavaScript code to handle cookie consent
     document.addEventListener('DOMContentLoaded', function () {
         var cookieConsent = document.getElementById('cookieConsent');
         var acceptCookiesBtn = document.getElementById('acceptCookiesBtn');
-
         // Check if user has previously accepted cookies
         var cookiesAccepted = localStorage.getItem('cookiesAccepted');
-
         // Display the cookie consent notification if user hasn't accepted cookies
         if (!cookiesAccepted) {
             cookieConsent.style.display = 'block';
         }
-
         // Event listener for accept cookies button
         acceptCookiesBtn.addEventListener('click', function () {
             localStorage.setItem('cookiesAccepted', true);

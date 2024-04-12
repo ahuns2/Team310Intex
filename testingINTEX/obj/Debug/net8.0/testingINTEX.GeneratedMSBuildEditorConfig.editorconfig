@@ -9,275 +9,275 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = testingINTEX
 build_property.RootNamespace = testingINTEX
-build_property.ProjectDir = /Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/
+build_property.ProjectDir = /Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/avawilliams/RiderProjects/testingINTEX/testingINTEX
+build_property.MSBuildProjectDirectory = /Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9BY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Db25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Db25maXJtRW1haWxDaGFuZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9FeHRlcm5hbExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Gb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Gb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Lockout.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Lockout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2Nrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Login.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dpbldpdGgyZmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dpbldpdGhSZWNvdmVyeUNvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Logout.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvRGlzYWJsZTJmYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvRG93bmxvYWRQZXJzb25hbERhdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvRW5hYmxlQXV0aGVudGljYXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvRXh0ZXJuYWxMb2dpbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvR2VuZXJhdGVSZWNvdmVyeUNvZGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvUmVzZXRBdXRoZW50aWNhdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvU2V0UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvU2hvd1JlY292ZXJ5Q29kZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvVHdvRmFjdG9yQXV0aGVudGljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvX1N0YXR1c01lc3NhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/Register.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9SZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9SZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9SZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9SZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9fU3RhdHVzTWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9fVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/Error.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/_ViewImports.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Areas/Identity/Pages/_ViewStart.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/About.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/AdmimSingleOrder.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/AdmimSingleOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pbVNpbmdsZU9yZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/AdmimSingleProduct.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/AdmimSingleProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pbVNpbmdsZVByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/AdminDeleteOrder.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/AdminDeleteOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pbkRlbGV0ZU9yZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/AdminDeleteProduct.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/AdminDeleteProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pbkRlbGV0ZVByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/AdminHomePage.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/AdminHomePage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pbkhvbWVQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/AdminOrderPage.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/AdminOrderPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pbk9yZGVyUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/AdminProductPage.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/AdminProductPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pblByb2R1Y3RQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/AdminUserPageTrash.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/AdminUserPageTrash.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pblVzZXJQYWdlVHJhc2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/Cart.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9DYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/Confirmation.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/Confirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Db25maXJtYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/FraudWarning.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/FraudWarning.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9GcmF1ZFdhcm5pbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/Index.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/ItemDetails.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/ItemDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JdGVtRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/LandingPage.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/LandingPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9MYW5kaW5nUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/LoggedInLandingPage.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/LoggedInLandingPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Mb2dnZWRJbkxhbmRpbmdQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/Payment.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/Payment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9QYXltZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/Privacy.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/Products.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/Products.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcm9kdWN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Home/ProductsTrash.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Home/ProductsTrash.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcm9kdWN0c1RyYXNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Shared/Error.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Shared/_LoginPartial.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/_ViewImports.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/_ViewStart.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/avawilliams/RiderProjects/testingINTEX/testingINTEX/Views/Shared/_Layout.cshtml]
+[/Users/avawilliams/RiderProjects/testingINTEX2/testingINTEX/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vpdt9hiuaf

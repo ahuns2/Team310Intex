@@ -1,22 +1,56 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-
-@{
-    ViewData["Title"] = "Product Page";
-}
-
-@model testingINTEX.Models.ViewModels.OrdersListViewModel
+﻿@model testingINTEX.Models.ViewModels.OrdersListViewModel
 
 <h1>Order Page</h1>
 <div>
     <a class="btn btn-info" asp-controller="Home" asp-action="AdmimSingleOrder">Add New Order</a>
 </div>
+<br/>
+
+<h2>Fraudulent Transactions</h2>
 <table class="table">
     <thead>
     <tr>
         <th>Date</th>
+        <th>Time</th>
         <th>Amount</th>
-        <th>Type of Transaction</th>
+        <th>Country of Transaction</th>
         <th>Shipping Address</th>
+        <th>Card Type</th>
+        <th>Bank</th>
+        <th>Transaction Fraudulent</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var order in Model.FraudulentOrders)
+    {
+    <tr>
+        <td>@order.Date</td>
+        <td>@order.Time:00</td>
+        <td>@order.Amount</td>
+        <td>@order.CountryOfTransaction</td>
+        <td>@order.ShippingAddress</td>
+        <td>@order.TypeOfCard</td>
+        <td>@order.Bank</td>
+        <td>@order.Fraud</td>
+        <td><a class="btn btn-info" asp-controller="Home" asp-action="AdminEditOrder" asp-route-id="@order.TransactionId">Edit</a></td>
+        <td><a class="btn btn-danger" asp-controller="Home" asp-action="AdminDeleteOrder" asp-route-id="@order.TransactionId">Delete</a></td>
+    </tr>
+    }
+    </tbody>
+</table>
+
+<h2>All Orders</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Amount</th>
+        <th>Country of Transaction</th>
+        <th>Shipping Address</th>
+        <th>Card Type</th>
         <th>Bank</th>
         <th>Transaction Fraudulent</th>
         <th>Edit</th>
@@ -28,9 +62,11 @@
     {
         <tr>
             <td>@order.Date</td>
+            <td>@order.Time:00</td>
             <td>@order.Amount</td>
-            <td>@order.TypeOfTransaction</td>
+            <td>@order.CountryOfTransaction</td>
             <td>@order.ShippingAddress</td>
+            <td>@order.TypeOfCard</td>
             <td>@order.Bank</td>
             <td>@order.Fraud</td>
             <td><a class="btn btn-info" asp-controller="Home" asp-action="AdminEditOrder" asp-route-id="@order.TransactionId">Edit</a></td>
@@ -44,5 +80,3 @@
      page-action="AdminOrderPage" page-classes-enabled="true"
      page-class="btn" page-class-normal="btn-outline-dark"
      page-class-selected="btn-primary" class="btn-group pull-right m-1"></div>
-
-
