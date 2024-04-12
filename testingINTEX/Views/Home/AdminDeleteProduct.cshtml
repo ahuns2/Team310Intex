@@ -1,0 +1,13 @@
+﻿@model Product
+
+<h2>Are you sure you want to to delete</h2>
+<h1>@Model.Name</h1>
+<h5>This action can NOT be undone</h5>
+
+<form method="post">
+
+    <input type="hidden" asp-for="ProductId" />
+
+    <button class="btn btn-danger" type="submit">Delete</button>
+    <a class="btn btn-info" asp-controller="Home" asp-action="AdminProductPage">Cancel</a>
+</form>

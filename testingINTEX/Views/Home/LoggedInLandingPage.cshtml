@@ -1,0 +1,68 @@
+﻿<head>
+    <link rel="stylesheet" href="/css/LoggedInLandingPage.css">
+</head>
+@* Cookie stuff *@
+<div id="cookieConsent" class="cookie-consent">
+    <div class="cookie-message">
+        We use cookies to improve your experience on our website. By continuing to browse this site, you agree to our use of cookies.
+        <button id="acceptCookiesBtn" class="accept-cookies-btn">Got it!</button>
+        <a asp-controller="Home" asp-action="Privacy" class="learn-more-link">Learn more</a>
+    </div>
+</div>
+<div class="div-101">
+    <div class="div-102">
+        <div>
+            <div class="div-103">
+                <img loading="lazy"
+                     src="/img/legobackground.jpg"
+                     class="img" />
+                <div class="div-104">
+                    <div class="div-105">Shop Lego Sets</div>
+                    <div class="div-106">Add something new to your collection today!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<h1 style="font-weight:bold">Recommended For You</h1>
+@if (Model != null)
+{
+<div class="product-container">
+    <ul class="product-list">
+        @foreach (var product in Model)
+        {
+        <li class="product-item">
+            <div class="product-info">
+                <img src="@product.ImgLink" alt="Product Image" class="product-image" />
+                <div class="product-details">
+                    <h3>@product.Name</h3>
+                    <p>Price: $@product.Price</p>
+                    <a href="@Url.Action("ItemDetails", "Home", new { id = product.ProductId })" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </li>
+        }
+    </ul>
+</div>
+}
+else
+{
+<p>Sorry, we couldn't find your recommended products. Please try again later.</p>
+}
+@* Cookie Stuff *@
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var cookieConsent = document.getElementById('cookieConsent');
+        var acceptCookiesBtn = document.getElementById('acceptCookiesBtn');
+        var cookiesAccepted = localStorage.getItem('cookiesAccepted');
+        if (!cookiesAccepted) {
+            cookieConsent.style.display = 'block';
+        }
+        acceptCookiesBtn.addEventListener('click', function () {
+            localStorage.setItem('cookiesAccepted', true);
+            cookieConsent.style.display = 'none';
+        });
+    });
+</script>

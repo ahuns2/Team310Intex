@@ -1,0 +1,86 @@
+@model Order
+
+<h1>Place Order</h1>
+
+<form method="post">
+
+
+    <h4>Total: $@ViewBag.Amount.00 </h4>
+    
+    <!-- CountryOfTransaction field -->
+    <label>Country of Transaction:</label>
+    <select asp-for="CountryOfTransaction">
+        <option value="USA">USA</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="India">India</option>
+        <option value="China">China</option>
+        <option value="Russia">Russia</option>
+    </select>
+    <br/><br/>
+    <!-- ShippingAddress field -->
+    <label>Shipping Address:</label>
+    <select asp-for="ShippingAddress">
+        <option value="USA">USA</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="India">India</option>
+        <option value="China">China</option>
+        <option value="Russia">Russia</option>
+    </select>
+    <br/><br/>
+    <!-- Bank field -->
+    <label>Bank:</label>
+    <select asp-for="Bank">
+        <option value="Barclays">Barclays</option>
+        <option value="Halifax Bank">Halifax Bank</option>
+        <option value="Monzo">Monzo</option>
+        <option value="HSBC">HSBC</option>
+        <option value="Metro">Metro</option>
+        <option value="Lloyds">Lloyds</option>
+        <option value="RBS">RBS</option>
+    </select>
+    <br/><br/>
+    <!-- TypeOfCard field -->
+    <label>Type of Card:</label>
+    <select asp-for="TypeOfCard">
+        <option value="MasterCard">MasterCard</option>
+        <option value="Visa">Visa</option>
+    </select>
+    <br/><br/>
+
+    <!-- Hidden field for TransactionId -->
+    <input type="hidden" asp-for="TransactionId"/>
+
+    <!-- Date field (automatically populated) -->
+    <label>Date Order Placed:</label>
+    <input asp-for="Date" readonly/>
+    <br/><br/>
+
+    <!-- DayOfWeek field (automatically populated) -->
+    <label>Day of Week Order Placed:</label>
+    <input asp-for="DayOfWeek" readonly/>
+    <br/><br/>
+
+    <!-- Time field (automatically populated) -->
+    <label>Time Order Placed:</label>
+    <input asp-for="Time" readonly/>
+    <br/><br/>
+
+    <!-- TypeOfTransaction field -->
+    <label>Type of Transaction:</label>
+    <input asp-for="TypeOfTransaction" readonly/>
+    <br/><br/>
+
+    <!-- EntryMode field (automatically populated) -->
+    <label>Entry Mode:</label>
+    <input asp-for="EntryMode" readonly/>
+    <br/><br/>
+    
+
+    <!-- Hidden field to pass the Amount value to the POST action -->
+    <input type="hidden" name="Amount" value="@ViewBag.Amount" />
+
+
+    <!-- Submit button -->
+    <button type="submit">Place Order</button>
+
+</form>

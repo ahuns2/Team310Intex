@@ -1,0 +1,39 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Register confirmation";
+}
+<head>
+    <link rel="stylesheet" href="/css/CompletedSignUp.css">
+</head>
+<div class="div">
+    <div class="div-2">
+        <div>
+            <div class="div-3">
+                <img loading="lazy"
+                     src="/img/legobackground.jpg"
+                     class="img" />
+                <div class="div-4">
+                    <h1>@ViewData["Title"]</h1>
+                    @{
+                        if (@Model.DisplayConfirmAccountLink)
+                        {
+                    <p>
+                     <a id="confirm-link" href="@Model.EmailConfirmationUrl">Click here to confirm your account</a>
+                    </p>
+                        }
+                        else
+                        {
+                    <p>
+                            Please check your email to confirm your account.
+                    </p>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

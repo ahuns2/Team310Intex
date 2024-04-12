@@ -1,0 +1,54 @@
+﻿@model Order
+
+<h1>Orders</h1>
+
+<!--the form to submit a movie-->
+<form method="post">
+    <input type="hidden" asp-for="TransactionId" />
+    <label asp-for="Date">Date Order Placed: </label>
+    <input asp-for="Date" required />
+    <br />
+    <br />
+    <label asp-for="DayOfWeek">Day of Week Order Placed: </label>
+    <input asp-for="DayOfWeek" required />
+    <br />
+    <br />
+    <label asp-for="Time">Time Order Placed: </label>
+    <input asp-for="Time" required />
+    <br />
+    <br />
+    <label asp-for="EntryMode">Entry Mode: </label>
+    <input asp-for="EntryMode" required />
+    <br />
+    <br />
+    <label asp-for="Amount">Amount: </label>
+    <input asp-for="Amount" required />
+    <br />
+    <br />
+    <label asp-for="TypeOfTransaction">Type of Transaction: </label>
+    <input asp-for="TypeOfTransaction"/>
+    <br />
+    <br />
+    <label asp-for="CountryOfTransaction">Country of Transaction: </label>
+    <input asp-for="CountryOfTransaction"/>
+    <br />
+    <br />
+    <label asp-for="ShippingAddress">Shipping Address: </label>
+    <input asp-for="ShippingAddress"/>
+    <br />
+    <br />
+    <label asp-for="Bank">Bank: </label>
+    <input asp-for="Bank"/>
+    <br />
+    <br />
+    <label asp-for="TypeOfCard">Type of Card: </label>
+    <input asp-for="TypeOfCard"/>
+    <br />
+    <br />
+    <label asp-for="Fraud">Transaction Fraudulent: </label>
+    <select asp-for="Fraud">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select>
+    <button type="submit">Place Order</button>
+</form>
